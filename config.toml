@@ -1,4 +1,4 @@
-baseURL = "https://zesheng630.github.io"
+baseURL = "https://zesheng630.github.io/"
 title   = "ze sheng"
 languageCode = "en-us"
 theme = "hello-friend-ng"
