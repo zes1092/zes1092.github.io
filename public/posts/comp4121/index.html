@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Ze Sheng]">
+<meta name="description" content="Advanced Algorithms" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://zesheng630.github.io/posts/comp4121/" />
+
+
+    <title>
+        
+            COMP4121 :: ze sheng 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://zesheng630.github.io/main.7238fbc26c86b91327d821319cda42853f31fd896d6c64e3bd097af2bb8f576c.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://zesheng630.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://zesheng630.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://zesheng630.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://zesheng630.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://zesheng630.github.io/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://zesheng630.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="COMP4121">
+<meta itemprop="description" content="Advanced Algorithms"><meta itemprop="datePublished" content="2022-03-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="10777"><meta itemprop="image" content="https://zesheng630.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://zesheng630.github.io/"/>
+
+<meta name="twitter:title" content="COMP4121"/>
+<meta name="twitter:description" content="Advanced Algorithms"/>
+
+
+
+
+    <meta property="og:title" content="COMP4121" />
+<meta property="og:description" content="Advanced Algorithms" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zesheng630.github.io/posts/comp4121/" /><meta property="og:image" content="https://zesheng630.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-22T00:00:00+00:00" />
+<meta property="og:see_also" content="https://zesheng630.github.io/posts/unsw-course-review/" /><meta property="og:see_also" content="https://zesheng630.github.io/posts/comp3821/" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-03-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://zesheng630.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">dazed</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://zesheng630.github.io/about/">about</a></li><li><a href="https://zesheng630.github.io/posts/">posts</a></li><li><a href="https://zesheng630.github.io/projects/">projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+        <link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="https://zesheng630.github.io/script/tikzjax.js"></script>
+
+    </span>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY9N19BZYQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HY9N19BZYQ');
+    </script>
+
+</header>
+
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        51 minutes
+
+        
+      </p>
+    </div>
+    <article>
+      <h1 class="post-title">
+        <a href="https://zesheng630.github.io/posts/comp4121/">COMP4121</a>
+      </h1>
+
+      
+        <div class="post-excerpt">Advanced Algorithms</div>
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title">Table of Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#order-statistics-quickselect">Order Statistics (QuickSelect)</a></li>
+        <li><a href="#database-access">Database access</a></li>
+        <li><a href="#skip-lists">Skip Lists</a></li>
+        <li><a href="#kargers-min-cut-algorithm">Karger&rsquo;s Min Cut Algorithm</a></li>
+        <li><a href="#randomised-hashing">Randomised Hashing</a></li>
+        <li><a href="#gaussian-annulus-random-projection-and-johnson-lindenstrauss-lemmas">Gaussian Annulus, Random Projection and Johnson Lindenstrauss Lemmas</a></li>
+        <li><a href="#page-rank">Page Rank</a></li>
+        <li><a href="#hidden-markov-models-and-the-viterbi-algorithm-and-its-applications">Hidden Markov Models and the Viterbi Algorithm and its applications</a></li>
+        <li><a href="#recommender-systems">Recommender Systems</a></li>
+        <li><a href="#clustering-algorithms">Clustering Algorithms</a></li>
+        <li><a href="#dft-dct-convolution">DFT, DCT, Convolution</a></li>
+        <li><a href="#svd">SVD</a></li>
+        <li><a href="#power-transmission-in-cellular-networks">Power Transmission in Cellular Networks</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </aside>
+        <hr />
+
+      <div class="post-content">
+        <h2 id="stats">Stats</h2>
+<h3 id="expectation-and-variance-of-a-random-variable">Expectation and Variance of a Random Variable</h3>
+<p>The <strong>expected value</strong> of a random variable is its mean. Assuming that the expected value converges, the expected value can be calculated as shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Discrete random variable</th>
+<th>Continuous random variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$E(X) = \sum_{i = 1}^{\infty} v_i \cdot p_i$</td>
+<td>$E(X) = \int_{-\infty}^{\infty}x \cdot f(x) dx$</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>variance</strong> of a random variable is defined as $V(X) = E(X - E(X))^2$ assuming that both expectations involved are finite; the standard deviation of a random variable $X$ is given by $\sigma = \sqrt{V(X)}$.</p>
+<h3 id="simple-inequalities">Simple inequalities</h3>
+<p>$$1 + x \leq e^x \text{ for all } x \in \mathbb{R}$$
+$$\left(1 - \frac{1}{n}\right)^n \leq \frac{1}{e} \leq \left(1 - \frac{1}{n} \right)^{n - 1} \text{ for all } n \in \mathbb{N}$$</p>
+<h3 id="probability-inequalities">Probability Inequalities</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The Markov Inequality</strong></td>
+<td>Let $X &gt; 0$ be a non-negative random variable. Then for all $t &gt; 0$, $$P(X \geq t) \leq \frac{E(X)}{t}$$</td>
+</tr>
+<tr>
+<td><strong>Chebyshev Inequality</strong></td>
+<td>Let $X &gt; 0$ be a random variable with the expected value $\mu = E(X)$ and standard deviation $\sigma = \sqrt{E((X - \mu)^2)}$. Then for all $\lambda &gt; 0$, $$P(| X - \mu | \geq \lambda \sigma) \leq \frac{1}{\lambda^2}$$</td>
+</tr>
+<tr>
+<td><strong>Chernoff Bound</strong></td>
+<td>Let $X = \sum_{k = 1}^{n} X_k$, where $X_k, 1 \leq k \leq n$, are independent Bernoulli trials with the probability of success $P(X_k = 1) = p_k$, where $0 &lt; p_k &lt; 1$. Thus, $\mu = E(X) = \sum_{k = 1}^{n} p_k$. Let $\sigma &gt; 0$ be any positive real. Then, $$P(X &gt; (1 + \sigma) \mu) &lt; \left( \frac{e^{\sigma}}{(1 + \sigma)^{1 + \sigma}}\right)^{\mu}$$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="order-statistics-quickselect">Order Statistics (QuickSelect)</h2>
+<p><strong>Can we find the $i^{th}$ largest or smallest item in linear time?</strong></p>
+<h3 id="non-deterministic-algorithm">Non-Deterministic Algorithm</h3>
+<p>In the quicksort algorithm, we note that after a partition, the pivot element ends up being in its correct index. Therefore, we can perform a combination of partitioning and binary search to find the item at the $i^{th}$ index.</p>
+<p>For example, we partition first using a random pivot, and as a result we will know the index of our pivot.
+If the pivot is index $i$, we&rsquo;ve found the element.
+Else if the pivot is at an index greater than $i$, then we partition the smaller side, else we partition the bigger side and continue until we&rsquo;ve found the $i^{th}$ element.</p>
+<pre><code class="language-py"># Implementation of rand-select
+
+def partition(A: list[int], lo: int, hi: int) -&gt; int:
+    # Partition the array A[lo..hi] and return partition index
+    i = lo - 1
+    pivot = A[hi]
+    for j in range(lo, hi):
+        if A[j] &lt;= pivot:
+            i += 1
+            A[i], A[j] = A[j], A[i]
+    A[i + 1], A[hi] = A[hi], A[i + 1]
+    return i + 1
+
+
+def rand_select(A: list[int], i: int, lo: int, hi: int) -&gt; int:
+    # Return the ith largest index in A
+    if lo &lt;= hi:
+        pi = partition(A, lo, hi)
+        if i &lt; pi:
+            return rand_select(A, i, lo, pi - 1)
+        return rand_select(A, i, pi + 1, hi)
+    return A[hi]
+</code></pre>
+<h3 id="runtime">Runtime</h3>
+<p>The runtime can be represented through the recurrence relation $T(n) = T\left( \frac{n}{2} \right) + O(n)$ which results in a $O(n)$ runtime. However, it can be analysed more in-depth statistically.</p>
+<h4 id="worst-case">Worst Case</h4>
+<p>The worst case runtime is $\Theta(n^2)$ which happens when the smallest or largest element is picked as the pivot - resulting in an <em>unbalanced partition</em>.</p>
+<h4 id="average-case">Average Case</h4>
+<p>However (assuming all elements are <strong>distinct</strong>), let us call a partition a <em>balanced partition</em> if the ratio between the ratio smaller side and larger side is less than 9 (9 is arbitrary, any small number &gt; 2 would do).
+Then the probability of having a balanced partition is 1 - (chance of choosing smallest 1/10 or biggest 1/10) = 1 - 2/10 = 8/10.</p>
+<p>Then let us find the expected number of partitions between two consecutive balanced partitions.
+In general, the probability that you need $k$ partitions to end up with another balanced partition is $\left( \frac{2}{10} \right)^{k - 1} \cdot \frac{8}{10}$.</p>
+<p>Thus, the expected number of partitions between two balanced partitions is</p>
+<p>$$
+\begin{align*}
+E
+&amp;= 1 \cdot \frac{8}{10} + 2 \cdot \left( \frac{2}{10} \right) \cdot \frac{8}{10} + 3 \cdot \left( \frac{2}{10} \right)^2 \cdot \frac{8}{10} + &hellip; \\
+&amp;= \frac{8}{10} \cdot \sum_{k = 0}^{\infty}(k + 1) \left( \frac{2}{10} \right)^k \\
+&amp;= \frac{8}{10}S.
+\end{align*}
+$$</p>
+<ul>
+<li>
+<p>To find $S$, note that</p>
+<p>$$\sum_{k = 0}^{\infty} q^k = \frac{1}{1 - q}.$$</p>
+<p>By differentiating both sides with respect to $q$ we get</p>
+<p>$$\sum_{q = 1}^{\infty} k q^{k - 1} = \frac{1}{(1 - q)^2}.$$</p>
+<p>Substituting $q = \frac{2}{10}$ we get that $S = \left(\frac{10}{8} \right)^2$.</p>
+</li>
+</ul>
+<p>Therefore,</p>
+<p>$$E = \frac{8}{10} \cdot \left( \frac{8}{10} \right)^2 = \frac{5}{4}.$$</p>
+<p>And so there are only 5/4 partitions between two balanced partitions.</p>
+<ul>
+<li>Note after 1 <em>balanced partition</em>, the size of the array is $\leq 9/10 n$, after the second <em>balanced partition</em>, it is $\leq (9/10)^2n$ and so on.</li>
+</ul>
+<p>Therefore, the total <strong>average</strong> (expected) run time satisfies</p>
+<p>$$
+\begin{align*}
+T(n)
+&amp;&lt; 5/4n + 5/4 \left( \frac{9}{10} \right)n + 5/4 \left( \frac{9}{10} \right)^2 n + 5/4 \left( \frac{9}{10} \right)^3 n + &hellip; \\
+&amp;= \frac{5/4 n}{1 - \frac{9}{10}} \\
+&amp;= 12.5n.
+\end{align*}
+$$</p>
+<p>Overall, the expected runtime of this algorithm is linear.</p>
+<h2 id="database-access">Database access</h2>
+<p>Assume that $n$ processes want to access a database, and that the time $t$ is discrete.
+If two processes simultaneously request access, there is a conflict and all processes are locked out of access.</p>
+<p>Assume that processes cannot communicate with each other on when to access.
+One possible for a process to determine if it should access the database at time $t$ is to &ldquo;request access&rdquo; with probability $p$ and &ldquo;do not request access&rdquo; with probability $(1 - p)$.</p>
+<p><strong>What should $p$ be to maximise the probability of a successful access to the database for a process at any instant $t$?</strong></p>
+<h3 id="efficient-selection-of-p">Efficient selection of p</h3>
+<p>The probability of success of process $i$ at any instant $t$ is</p>
+<p>$$P(S(i, t)) = p(1 - p)^{n - 1},$$</p>
+<p>because a process $i$ requests access with probability $p$ and the probability that no other process has requested access is $(1 - p)^{n - 1}$.
+The extreme points of this is found by solving</p>
+<p>$$\frac{d}{dp}P(S(i, t)) = (1 - p)^{n - 1} - p(n - 1)(1 - p)^{n - 2} = 0$$</p>
+<p>which gives $p = 1/n$, which gives a probability of success of</p>
+<p>$$P(S(i, t)) = p(1 - p)^{n - 1} = \frac{1}{n} \left( 1 - \frac{1}{n} \right)^{n - 1}.$$</p>
+<p>However,</p>
+<p>$$\lim_{n \rightarrow \infty} \left(1 - \frac{1}{n} \right)^n = e$$</p>
+<p>and hence $P(S(i, t)) = \Theta \left( \frac{1}{n} \right)$.
+Thus, the probability of failure after $t$ instances is</p>
+<p>$$
+\begin{align*}
+P(\text{failure after $t$ instants})
+&amp;= \left( 1 - \frac{1}{n} \left( 1 - \frac{1}{n} \right)^{n - 1} \right)^t \\
+&amp;\approx \left( 1 - \frac{1}{e n}\right)^t
+\end{align*}
+$$</p>
+<p>We observe that</p>
+<table>
+<thead>
+<tr>
+<th>P(failure after $t = en$ instances</th>
+<th>P(failure after $t = en \cdot 2 \ln n$ instances</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$$\left( 1 - \frac{1}{en}\right)^{en} \approx \frac{1}{e}$$</td>
+<td>$$\left(1 - \frac{1}{en} \right)^{en \cdot 2 \ln n} \approx \frac{1}{n^2}$$</td>
+</tr>
+</tbody>
+</table>
+<p>Thus, a small increase in the number of time instants, from $en$ to $en \cdot 2 \ln n$ caused a dramatic reduction in the probability of failure.</p>
+<p>After $en \cdot 2 \ln n$ instances, the probability of failure of each process $\leq 1/n^2$ and since there are $n$ processes, then the probability that at least one process failed is $\leq 1/n$.
+Thus after $en \cdot 2 \ln n$ instances all processes succeeded to access the database with probability at least $1 - 1/n$.</p>
+<h3 id="comparison-with-centralised-algorithm">Comparison with centralised algorithm</h3>
+<p>If the processes could communicate, then it would take $n$ instances for all of them to access the database.</p>
+<p>If they can&rsquo;t communicate, then the above method will allow them to access the database with probability $1 - 1/n$ time, which is larger only by a relatively small factor of $2e \ln n$.</p>
+<h2 id="skip-lists">Skip Lists</h2>
+<p>A skip list is a probabilistic data structure that functions similarly to a binary search tree.</p>
+<pre><code class="language-py"># Example structure of a skip list
+
+[H]--------------------------[35]----------------[T]
+[H]----------------[21]------[35]----------------[T]
+[H]------[12]------[21]-[24]-[35]------[55]------[T]
+[H]-[02]-[12]-[17]-[21]-[24]-[35]-[43]-[55]-[62]-[T]
+</code></pre>
+<h3 id="operations">Operations</h3>
+<ul>
+<li>
+<p><strong>Search of $k$</strong></p>
+<ol>
+<li>Start from the highest level of head H and go as far right without exceeding $k$</li>
+<li>Drop one level down and repeat the procedure using lower level links until you find $k$</li>
+</ol>
+</li>
+<li>
+<p><strong>Insertion of $k$</strong></p>
+<ol>
+<li>Search for the correct location</li>
+<li>Toss a coin until you get a head, and count the number of tails $t$ you got</li>
+<li>Insert $k$ and link it at levels $0 - t$ from the bottom up</li>
+</ol>
+</li>
+<li>
+<p><strong>Deletion</strong></p>
+<p>Deleting an element is just like in a standard doubly linked list</p>
+</li>
+</ul>
+<h3 id="analysis">Analysis</h3>
+<h4 id="expected-levels">Expected Levels</h4>
+<p>The probability of getting $i$ consecutive tails when flipping a coin $i$ times is $1/2^i$.
+Thus, an $n$ element Skip List has on average $n/2^i$ elements with links on level $i$.
+Since an element has links only on levels $0 - i$ with probability $1/2^{i + 1}$, the total <strong>expected</strong> number of link levels per element is</p>
+<p>$$\sum_{i = 0}^{\infty} \frac{i + 1}{2^{i + 1}} = \sum_{i = 1}^{\infty} \frac{i}{2^i} = 2.$$</p>
+<p>Let $\#(i)$ be the number of elements on level $i$.</p>
+<p>Then, $E[\#(i)] = \frac{n}{2^i}$, and by the Markov inequality, the probability of having at least one element at level $i$ satisfies</p>
+<p>$$P(\#(i) \geq 1) \leq \frac{E[\#(i)]}{1} = \frac{n}{2^i}.$$</p>
+<p>Thus, the probability to have an element on level $2 \log n$ is smaller than $n/2^{2 \log n} = 1/n.$</p>
+<p>More generally, the probability to have an element (be nonempty) on level $k \log n$ $&lt; n /2^{k \log n} = 1/n^{k - 1}$.
+The expected value $E(k)$ such that $k$ is the lowest integer so that the number of levels is $\leq k \log n$ is</p>
+<p>$$E(k) \leq \sum_{k = 1}^{\infty} \frac{k}{n^{k - 1}} = \left( \frac{n}{n - 1} \right)^2.$$</p>
+<p>Thus, the expected number of levels is barely larger than $\log n$.</p>
+<h4 id="expected-search-per-level">Expected search per level</h4>
+<p>Thus, the expected number of elements between any two consecutive elements with a link on level $i + 1$ which have links only up to level $i$ is smaller than</p>
+<p>$$\frac{0}{2} + \frac{1}{2^2} + \frac{2}{2^3} + \frac{3}{2^4} + &hellip; = 1.$$</p>
+<p>So once on level $i$, on average we will have to inspect only two elements on that level before going to a lower level.</p>
+<h4 id="search-time-complexity">Search Time Complexity</h4>
+<p>On average, levels $&lt; 2 \log n$, and 2 elements are visited per level.
+Therefore, on average, the search will be in time $O(4 \log n) = O(\log n)$.</p>
+<h4 id="space-complexity">Space Complexity</h4>
+<p>For an element on levels $0 - i$, we store $O(i + 1)$ pointers, and expected number of elements with highest link on level $i$ is $O(n/2^{i + 1})$. Thus, total expected space for is</p>
+<p>$$O \left( \sum_{i = 0}^{\infty}2(i + 1) \frac{n}{2^{i + 1}}\right) = O \left( 2n \sum_{i = 0}^{\infty} \frac{i + 1}{2^{i + 1}} \right) = O(4n) = O(n).$$</p>
+<h2 id="kargers-min-cut-algorithm">Karger&rsquo;s Min Cut Algorithm</h2>
+<p>Given a graph $G = (V, E)$, Karger&rsquo;s Min Cut algorithm finds a cut $T$ that partitions vertices $V$ into two non empty disjoint subsets $X$ and $Y$, with the lowest capacity of edges which have one edge in $X$ and the other in $Y$.</p>
+<p>A deterministic way to solve this is through max flow from one vertex to all other vertices, however this runs in $O(|V|^4)$.</p>
+<h3 id="procedure">Procedure</h3>
+<h4 id="contraction">Contraction</h4>
+<p>The algorithm makes use of contracting edges in a graph.
+To contract an edge $e(u, v)$, fuse $u$ and $v$ into a single vertex $[uv]$ and replace edges $e(u, x)$ and $e(v, x)$ with a single edge $e([uv], x)$ of weight $w([uv], x) = w(u, x) + w(v, x)$.
+The obtained graph after this is called $G_{uv}$.</p>
+<h3 id="claims">Claims</h3>
+<p>After collapsing $u$ and $v$ into a single vertex</p>
+<ul>
+<li>If $u$ and $v$ belong to the <strong>same side of a min cut</strong>, the capacity of the min cut in $G_{uv}$ is the same as that of $G$.</li>
+<li>If $u$ and $v$ belong to <strong>opposite sides of a min cut</strong>, the capacity of the min cut in $G_{uv}$ is larger or equal to the capacity of the min cut in $G$.</li>
+</ul>
+<p>Therefore,</p>
+<ul>
+<li>
+<p>Let $T_1 = (X_1, Y_1)$ be a min cut in $G_{uv}$</p>
+</li>
+<li>
+<p>Split $[uv]$ back into $u$ and $v$, but keep them on the same side of the cut $T_1$. This produces a cut $T_2$ in $G$ of the same capacity as the min cut $T_1$ in $G_{uv}$.</p>
+<p>Thus, the capacity of the min cut in $G$ can only be smaller than the min cut $T_1$ in $G_{uv}$</p>
+</li>
+</ul>
+<h3 id="algorithm">Algorithm</h3>
+<ol>
+<li>While there are more than 2 vertices
+<ol>
+<li>Pick an edge to with probability proportional to the weight of that edge
+$$P(e(u, v)) = \frac{w(u, v)}{\sum_{e(p, q) \in E} w(p, q)}$$</li>
+<li>Contract the edge, and remove self loops</li>
+</ol>
+</li>
+<li>Take the capacity of that last edge to be the estimate of the capacity of the min cut in $G$</li>
+</ol>
+<h3 id="theorems">Theorems</h3>
+<p>Let $M(G)$ represent the min cut capacity of $G$.</p>
+<h4 id="theorem-1">Theorem 1</h4>
+<p>The probability that the capacity of a min cut in $G_{uv}$ is larger than the capacity of a min cut in $G$ is smaller than $2/n$ where $n = |V|$.</p>
+<p>$$P(M(G_{uv}) &gt; M(G)) &lt; \frac{2}{n}.$$</p>
+<p>This is because this probability is less than or equal to the probability that the edge $e(u, v)$ belonged in the set of edges along the min cut $M$.
+The probability of the $e(u, v)$ in $M$ is less than or equal to the final min cut capacity divided by the total capacity of the graph (which is equal to $\frac{n}{2}$), resulting in the final probability of $\frac{2}{n}$.</p>
+<h4 id="theorem-2">Theorem 2</h4>
+<p>If we run edge contraction until there is 1 edge, then the probability $\pi$ that the capacity of that edge is equal to the capacity of the min cut in G is $\Omega \left( \frac{1}{n^2} \right)$.</p>
+<p>From the first theorem</p>
+<p>$$
+\begin{align*}
+\pi
+&amp;= P(M(G) = M(G_{n-2})) \\
+&amp;= \prod_{i = 1}^{n - 2} P(M(G_i) = M(G_{i - 1})) \\
+&amp;\leq \left(1 - \frac{2}{n} \right) \left(1-\frac{2}{n-1}\right) \left(1-\frac{2}{n-2}\right) &hellip; \left(1-\frac{2}{3} \right) \\
+&amp;= \frac{n - 2}{n} \times \frac{n - 3}{n - 1} \times \frac{n - 4}{n - 2} \times &hellip; \times \frac{1}{3} \\
+&amp;= \frac{2}{n(n-1)}.
+\end{align*}
+$$</p>
+<p>Since the contraction runs in $O(n^2)$, and has a $\Omega \left( \frac{1}{n^2} \right)$ chance of being correct, it needs to be run $\Theta(n^2)$ times, resulting in a final runtime of $O(n^4)$ to find the min cut.</p>
+<h3 id="kargers-min-cut-refinement">Karger&rsquo;s Min Cut Refinement</h3>
+<p>The algorithm can be improved to run in $O(n^2 \log^3 n)$ with the high probability of being correct through a divide and conquer approach.</p>
+<p>If after running the contraction algorithm until there is $\lfloor \frac{n}{2} \rfloor$ vertices runs in $O(n^2)$ and the chance of being correct is $\approx 1/4$.
+Hence, by running the algorithm until there are $\lfloor \frac{n}{2} \rfloor$ vertices 4 times, and then recursing on those smaller graphs, we have a runtime of</p>
+<p>$$T(n) = 4T\left(\frac{n}{2}\right) + O\left(n^2\right) = O(n^2 \log n).$$</p>
+<pre><code class="language-py"># Python flavoured pseudo code of the refined algorithm
+
+def karger_refined(G: Graph) -&gt; int:
+    V, E = G
+    # Base case, return the last and only edge weight
+    if len(V) == 2:
+        return E[V[0], V[1]]
+    
+    # Run contraction 4 times and recurse on those 4 new graphs
+    min_cuts = [karger_refined(contract(G)) for _ in range(4)]
+    return min(min_cuts)
+</code></pre>
+<p>Let $p(n) = P(\text{success for a graph of size $n$})$, then</p>
+<p>$$
+\begin{align*}
+p(n)
+&amp;= 1 - P(\text{failure on one branch})^4 \\
+&amp;= 1 - (1 - P(\text{success on one branch}))^4 \\
+&amp;= 1 - \left( 1 - \frac{1}{4}p \left(\frac{n}{2}\right)\right)^4 \\
+&amp;&gt; p\left(\frac{n}{2}\right) - \frac{3}{8}p\left(\frac{n}{2}\right)^2 \\
+&amp;&gt; \frac{1}{log(n)}.
+\end{align*}
+$$</p>
+<p>If we run our algorithm $(\log n)^2$ times, the probability we are correct $\pi$ is</p>
+<p>$$\pi = 1 - \left(1 - \frac{1}{\log n} \right)^{(\log n)^2}$$</p>
+<p>However, since for all reasonably large $k$, $(1 - 1/k)^k \approx e^{-1}$.
+As a result,</p>
+<p>$$\pi \approx 1 - e^{-\log n} = 1 - 1/n.$$</p>
+<p>Hence, if we run <code>karger_refined</code> $(\log n)^2$ times, we have a probability of being correct $1 - 1/n$, with a runtime of</p>
+<p>$$O\left(n^2 \log^3 n \right) \lt\lt O(\left(n^4\right).$$</p>
+<h2 id="randomised-hashing">Randomised Hashing</h2>
+<p>If the hash function can be analysed, and a sequence of worst keys is chosen, then a lookup in a hash table can take $O(n)$, though ideally we want to have $O(1)$.</p>
+<h3 id="universal-hashing">Universal Hashing</h3>
+<p>Let $H$ be a finite collection of hash functions that map a given universe $U$ of keys into the smaller range {0 .. m - 1}.
+$H$ is said to be <strong>universal</strong> if for each pair of distinct keys $x, y \in U$, the number of hash functions $h \in H$ for which $h(x) = h(y)$ is $\frac{|H|}{m}$.</p>
+<p>Assume that a family of hash functions $H$ is universal, and we are hashing $n$ keys into a hash table of size $m$.
+Let $C_x$ be the total number of collisions involving key $x$, then the expected value $E[C_x]$ satisifies</p>
+<p>$$E[C_x] = \frac{n - 1}{m}.$$</p>
+<h4 id="designing-a-universal-family-of-hash-functions">Designing a universal family of hash functions</h4>
+<ul>
+<li>Choose the size of the hash table $m$ to be a prime number</li>
+<li>Let $r$ be such that the size $|U|$ of the universe of all keys satisifies $m^r \leq |U| \leq m^{r+1}$, i.e. $r = \lfloor \log_m |U|\rfloor$</li>
+<li>Hence, we can represent each key $x$ in base $m$ where
+$$\vec{x} = \langle x_0, x_1, &hellip;, x_r\rangle \text{ and } x = \sum_{i=0}^{r}x_i m^i$$</li>
+<li>Let $\vec{a} = \langle a_0, a_1, &hellip;, a_r \rangle$ be a vector of $r + 1$ <strong>randomly chosen</strong> elements from the set $\{0, 1, &hellip;, m - 1 \}$</li>
+<li>Define a corresponding hash function $h_{\vec{a}}(x) = \left( \sum_{i=0}^{r} x_i a_i \right) \mod m$</li>
+</ul>
+<h4 id="proving-universality">Proving universality</h4>
+<p>Assume $x, y$ are two distinct keys. Then for there to be a hash collision,</p>
+<p>$$
+\begin{align*}
+h_{\vec{a}}(x) = h_{\vec{a}}(y)
+&amp;\Leftrightarrow \sum_{i=0}^{r}x_ia_i = \sum_{i=0}^{r}y_ia_i \mod m \\
+&amp;\Leftrightarrow \sum_{i=0}^{r}(x_i - y_ia_i) = 0 \mod m
+\end{align*}
+$$</p>
+<p>Since $x \neq y$ there exits $0 \leq k \leq r$ such that $x_k \neq y_k$.
+Assume that $x_0 \neq y_0$, then</p>
+<p>$$(x_0 - y_0)a_0 = - \sum_{i=1}^{r}(x_i - y_i)a_i \mod m$$</p>
+<p>Since $m$ is a prime, every non-zero element $z \in \{0, 1, &hellip;, m - 1\}$ has a multiplicative inverse $z^{-1}$, such that $z \cdot z^{-1} = 1 \mod m$ and so</p>
+<p>$$a_0 = \left( - \sum_{i=0}^{r} (x_i - y_i)a_i \right) (x_0 - y_0)^{-1} \mod m$$</p>
+<p>this implies that</p>
+<ol>
+<li>for any 2 keys $x, y$ such that $x_0 \neq y_0$ and</li>
+<li>for any randomly chosen $r$ numbers $a_1, a_2, &hellip;, a_r$</li>
+</ol>
+<p>there exists <strong>exactly one</strong> $a_0$ such that $h_{\vec{a}}(x) = h_{\vec{a}}(y)$.</p>
+<p>Since there are</p>
+<ul>
+<li>$m^r$ sequences of the form $\langle a_{1}, &hellip;, a_r \rangle$</li>
+<li>$m^{r+1}$ sequences of the form $\langle a_0, a_1, &hellip;, a_r \rangle$</li>
+</ul>
+<p>as a result, the probability to choose a sequence $\vec{a}$ such that $h_{\vec{a}}(x) = h_{\vec{a}}(y)$ is equal to</p>
+<p>$$\frac{m^r}{m^{r+1}} = \frac{1}{m}.$$</p>
+<p>Thus, the family $H$ is a universal collection of hash functions.</p>
+<h4 id="using-universal-family-of-hash-functions">Using universal family of hash functions</h4>
+<ol>
+<li>Pick $r = \lfloor \log_m |U| \rfloor$ ,so that $m^r \leq |U| \leq m^{r+1}$</li>
+<li>For each run, pick a hash function by randomly picking a vector $\vec{a} = \langle a_0, a_1, &hellip;, a_r \rangle$ such that $0 \leq a_i \leq m$, for all $i$,  $0 \leq i \leq r$.</li>
+<li>During each run use that function on all keys</li>
+</ol>
+<h3 id="designing-a-perfect-hash-table">Designing a Perfect Hash table</h3>
+<h4 id="first-step">First step</h4>
+<p><strong>Given $n$ keys we will be constructing hash tables for size $m &lt; 2n^2$ using universal hashing.
+The probability that such a table is collision free will be $&gt; 1/2$</strong></p>
+<ol>
+<li>Pick the smallest prime $m$, such that $n^2 &lt; m &lt; 2n^2$</li>
+<li>Pick a random vector $\vec{a}$ and hash all keys using the corresponding hash function $h_{\vec{a}}$</li>
+</ol>
+<p>Given $n$ keys, there will be $n \choose 2$ pairs of keys.
+By universality of the family of hash functions used, for each pair of keys the probability of collision is $1/m$.
+Since $m \geq n^2$ we have $\frac{1}{m} \leq \frac{1}{n^2}$.
+Thus, the expected total number of collisions in the table is at most</p>
+<p>$${n \choose 2} \frac{1}{m} \leq \frac{n(n - 1)}{2} \frac{1}{n^2} &lt; \frac{1}{2}.$$</p>
+<p>Let $X$ be the random variable equal to no. collisions. Then by the Markov Inequality with $t=1$ we get</p>
+<p>$$P\{X \geq 1\} \leq \frac{E[X]}{1} &lt; \frac{1}{2}.$$</p>
+<p>Thus, the chance of a collision after $k$ hashes $&lt; (1/2)^k$, which rapidly tends to 0.
+Consequently, after a few random trial-and-error attempts we will obtain a collision free hash table of size $&lt; 2n^2$.</p>
+<p>If $p$ is the probability of a collision, then the expected number of trials $E[N]$ before we hit a collision free hash table of size $2n^2$ is</p>
+<p>$$
+\begin{align*}
+E[N]
+&amp;= 1(1 - p) + 2p(1 - p) + 3p^2(1 - p) + &hellip; \\
+&amp;= (1 - p)(1 + 2p + 3p^2 + &hellip;) \\\
+&amp;= \frac{1}{1 - p} \\
+&amp;&lt; 2.
+\end{align*}
+$$</p>
+<h4 id="second-step">Second step</h4>
+<p><strong>Choose $M$ to be the smallest prime number $&gt; n$</strong></p>
+<p>Thus, $n \leq m \leq 2n$.
+Produce a hash table of size $M$ again by choosing randomly from a universal family of hash funtions.
+Assume that a slot $i$ of this table has $n_i$ many elements.
+Hash these $n_i$ elements into a secondary hash table of size $m_i &lt; 2n_i^2$.
+We have to guarantee that the sum total of sizes of all secondary hash tables, i.e., $\sum_{i=1}^{M}m_i$ is linear in $n$.
+Note ${n_i \choose 2}$ is the number of collisions at $n_i$ and</p>
+<p>$${n_i \choose 2} = \frac{n_i(n_i - 1)}{2} = \frac{n_i^2}{2} - \frac{n_i}{2}.$$</p>
+<p>Therefore the total number of collisions in the hash table is $\sum_{i=1}^{M} {n_i \choose 2}$, and since the expected value of collision with universal hashing is $1/M$,</p>
+<p>$$
+\begin{align*}
+E\left[ \sum_{i=1}^{M} {n_i \choose 2} \right]
+&amp;= {n \choose 2}\frac{1}{M} \\
+&amp;= \frac{n(n - 1)}{2M} \\
+E\left[ \sum_{i=1}^{M} n_i^2 \right]
+&amp;= 2E\left[ \sum_{i=1}^{M} {n_i \choose 2} \right] + n
+\end{align*}
+$$</p>
+<p>Thus,</p>
+<p>$$E\left[ \sum_{i=1}^{M} n^2_i \right] \leq \frac{n(n-1)}{n} + n = 2n - 1 &lt; 2n.$$</p>
+<p>Applying the Markov Inequality to find the probability we have more than $4n$ items in our hash table, we obtain</p>
+<p>$$P \left\{ \sum_{i=1}^{M} n_i^2 &gt; 4n \right\} \leq \frac{E\left[ \sum_{i=1}^{M} n_i^2 \right]}{4n} &lt; \frac{2n}{4n} = \frac{1}{2}$$</p>
+<p>Thus, after a few attempts we will produce a hash table of size $M &lt; 2n$ for which $\sum_{i=1}^{M} &lt; 4n$, and if we choose primes $m_i &lt; 2n_i^2$ then $\sum_{i=1}^{M} m_i &lt; 8n$.
+In this way the size of the primary hash table plus the sizes of all secondary hash tables satisfies</p>
+<p>$M + \sum_{i=1}^{M}m_i &lt; 2n + 8n = 10n.$</p>
+<h2 id="gaussian-annulus-random-projection-and-johnson-lindenstrauss-lemmas">Gaussian Annulus, Random Projection and Johnson Lindenstrauss Lemmas</h2>
+<h3 id="generating-random-points-in-d-dimensional-spaces">Generating random points in d-dimensional spaces</h3>
+<p>Let us consider a Gaussian random variable $X$ with a zero mean ($E[X] = \mu = 0$) and variance $V[X] = v = 1/2\pi$, then its density is given by</p>
+<p>$$f_X(x) = \frac{1}{\sqrt{2\pi v}}e^{-\frac{x^2}{2v}} = e^{-\pi x^2}$$</p>
+<p>Assume that we use such $X$ to generate independently the coordinates $\langle x_1, &hellip;, x_d \rangle$ of a random vector $\vec{x}$ from $\mathbb{R}^d$.
+Then $E[X^2] = E[(X - E[X])^2] = V[X]$, and $E\left[ \frac{x_1^2 + &hellip; + x_d^2}{d} \right] = dV[X]/d = V[X]$.</p>
+<p>As a result, given the length $|x| = \sqrt{x_1^2 + &hellip; + x_d^2}$, the expected value of the square of a the length of $\vec{x}$ is $E[|x|^2] = d/2\pi$. So, on average, $|x| \approx \frac{\sqrt{d}}{\sqrt{2\pi}} = \Theta(\sqrt{d})$, and if $d$ is large, then this is true with a high probability.</p>
+<p>If we choose 2 points independently, then</p>
+<p>$$E[\langle x, y \rangle] = E[x_1 y_1 + &hellip; + x_d y_d] = d E[XY] = d E[X] E[Y] = 0.$$</p>
+<p>Hence, the expected value of the scalar product of any 2 vector with randomly chosen coordinates is zero.</p>
+<p>Hence, vectors with randomly chosen coordinates:</p>
+<ul>
+<li><strong>have approximate the same length $\Theta(\sqrt{d})$</strong></li>
+<li><strong>any 2 such vectors are likely to be almost orthogonal</strong></li>
+</ul>
+<h3 id="higher-dimensional-balls">Higher Dimensional Balls</h3>
+<p>Most of the volume of a high dimensional ball is near:</p>
+<ul>
+<li>Any of its equators (between two close parallel hyper-planes symmetric with respect to the center).
+<ul>
+<li>(Insert lots of math).
+The ratio between a slice of the sphere $A$ that lies above the hyperplane $x_1 = \frac{c}{\sqrt{d - 1}}$ for some constant $c$, and the whole hemisphere satisifies
+$$
+\frac{A}{H} &lt; \frac{
+V(d - 1)\frac{
+e^{\frac{-c^2}{2}}
+}{
+c \sqrt{d - 1}
+}
+}{
+V(d - 1) \frac{
+1
+} {
+2 \sqrt{d - 1}
+}
+}
+= \frac{2}{c}e^{-\frac{c^2}{2}}
+$$</li>
+</ul>
+</li>
+<li>It&rsquo;s surface (if we have a ball of radius $r$, and another smaller, of radius $r(1 - \epsilon)$, most of the volume of the bigger ball is in the annulus outside the smaller ball).
+<ul>
+<li>This is because the area of the smaller ball is $(1 - \epsilon)^d$ and $(1 - \epsilon) &lt; 1$.
+Hence, for large values of $d$ this tends to 0 quickly.</li>
+</ul>
+</li>
+</ul>
+<h3 id="johnson-lindenstrauss-lemma">Johnson-Lindenstrauss Lemma</h3>
+<p>For any $\epsilon$, $0 &lt; \epsilon &lt; 1$, and any integer $n$, assume that $k$ satisfies $k &gt; \frac{3}{\gamma \epsilon^2} \ln n$.
+Then for any set of $n$ points given by the vectors $v_1, &hellip;, v_n$ in $\mathbb{R}^d$, with the probability of at least $1 - 3/(2n)$, the random projection $f&rsquo; \mathbb{R}^d \rightarrow \mathbb{R}^k$ has the property that for ALL pairs of points $v_i, v_j$</p>
+<p>$$|| f&rsquo;(v_i - v_j)| - |v_i - v_j|| \leq \epsilon | v_i - v_j|.$$</p>
+<p>Thus, $f&rsquo;(v)$ &ldquo;almost&rdquo; preserves distances between points given by vectors $v_i$ despite reduction of dimensionality from $d &raquo; k$ to only $k$.</p>
+<h3 id="application-of-johnson-lindenstrauss-lemma">Application of Johnson-Lindenstrauss Lemma</h3>
+<ul>
+<li>Choose $k$ random vectors by choosing each coordinate of every vector using a unit variance Gaussian</li>
+<li>Pre-process data by projecting to $k &lt; &lt; d$ dimensional subspace spanned by the $k$ random vectors</li>
+<li>For comparing new data with current data, map the new vector $y \in \mathbb{R}^d$ with its projection $f&rsquo;(y) = f(y) / \sqrt{k}$.</li>
+<li>Then nearest neighbours of $f&rsquo;(y)$ can be used in hte projected $k$ dimensional space instead of dimension $d &gt; &gt; k$.</li>
+</ul>
+<h2 id="page-rank">Page Rank</h2>
+<p>The Page Rank algorithm aims to solve the problem of how to order webpages.</p>
+<h3 id="setup">Setup</h3>
+<p>Consider all the webpages $P_i$ on the entire internet as vertices of a directed graph, where a directed edge $P_i \rightarrow P_j$ exists if $P_i$ has a link to $P_j$.</p>
+<p>Notation:</p>
+<ul>
+<li>$\rho(P)$ = the rank of a page (to be assigned)</li>
+<li>$\#(P)$ = the number of outgoing links on a web page</li>
+</ul>
+<p>A web page $P$ should have a high rank only if it is pointed at by many pages $P_i$ which:</p>
+<ol>
+<li>themselves have a high rank $\rho(P_i)$</li>
+<li>and do not point to an excessive number of other web pages, i.e. $\#P(_i)$ is reasonably small.</li>
+</ol>
+<p>So we want the following system of equations to be satisfied:</p>
+<p>$$\left\{\rho(P) = \sum_{P_i \rightarrow P} \frac{\rho(P_i)}{\#(P_i)} \right\}_{P \in WWW}$$</p>
+<p>We have a large sparse matrix $G_1$ of size $M \times M$, where $M = |WWW|$</p>
+<p>$$
+G_1 =
+\begin{pmatrix}
+g(1, 1) &amp; \ldots &amp; g(1, j) &amp; \ldots &amp; g(1, M) \\
+\vdots  &amp; \ddots &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+g(i, 1) &amp; \ldots &amp; g(i, j) &amp; \ldots &amp; g(i, M) \\
+\vdots  &amp; \ddots &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+g(M, 1) &amp; \ldots &amp; g(M, j) &amp; \ldots &amp; g(M, M)
+\end{pmatrix}
+\
+$$</p>
+<p>$$
+g(i, j) = <br>
+\begin{cases}
+\frac{1}{\#(P_i)} &amp; \text{ if } P_i \rightarrow P_j \\
+0 &amp; \text{otherwise}
+\end{cases}
+$$</p>
+<p>However, because $G_1$ is mostly a sparse matrix, it resembles
+$$
+G_1 =
+\begin{pmatrix}
+&amp;   &amp; \vdots      &amp;   &amp;        &amp;   &amp; \vdots      &amp;   &amp;        \\
+&amp;   &amp; \vdots      &amp;   &amp;        &amp;   &amp; \vdots      &amp;   &amp;        \\
+\ldots &amp; 0 &amp; \frac{1}{k} &amp; 0 &amp; \ldots &amp; 0 &amp; \frac{1}{k} &amp; 0 &amp; \ldots \\
+&amp;   &amp; \vdots      &amp;   &amp;        &amp;   &amp; \vdots      &amp;   &amp;        \\
+&amp;   &amp; \vdots      &amp;   &amp;        &amp;   &amp; \vdots      &amp;   &amp;        \\
+\end{pmatrix}
+\
+$$</p>
+<p>where $k$ is equal to $\#(P_i)$, the number of pages which th epage $P_i$ has links to.
+Hence, the system of linear equations can be represented as</p>
+<p>$$\mathbf{r}^\intercal = \mathbf{r}^\intercal G_1$$</p>
+<p>where</p>
+<p>$$\mathbf{r}^\intercal = (\rho(P_1), \rho(P_2), &hellip;, \rho(P_M)).$$</p>
+<p>Note that $G_1$ is a markov matrix, and $\mathbf{r}^\intercal$ is a left-hand eigenvector of $G_1$ corresponding to the eigenvalue 1.
+Thus, finding ranks of web pages is reduced to finding eigenvectors of $G_1$, which corresponds to the eigenvalue 1.</p>
+<p>If we model a random walk on the graph of this matrix, there are 2 issues:</p>
+<ol>
+<li>
+<p>What should we do when we get to a webpage with no outgoing links?</p>
+<p><strong>Solution:</strong>
+Jump to a randomly chosen webpage when a node with no outgoing links.</p>
+<p>I.e. the first row in $G_1$ is a dangling page, with no outgoing pages.
+$G_2$ fixes this by making it point to all pages with equal probability.
+Such a matrix is <strong>row stochastic</strong>, meaning that each row sums up to 1.</p>
+<p>$$
+G_1 =
+\begin{pmatrix}
+&amp;   &amp; \vdots             &amp;   &amp;        &amp;   &amp; \vdots             &amp;   &amp;        \\
+\ldots &amp; 0 &amp; 0                  &amp; 0 &amp; \ldots &amp; 0 &amp; 0                  &amp; 0 &amp; \ldots \\
+&amp;   &amp; \vdots             &amp;   &amp;        &amp;   &amp; \vdots             &amp;   &amp;        \\
+\ldots &amp; 0 &amp; \frac{1}{\#(P_i)} &amp; 0 &amp; \ldots &amp; 0 &amp; \frac{1}{\#(P_i)} &amp; 0 &amp; \ldots \\
+&amp;   &amp; \vdots             &amp;   &amp;        &amp;   &amp; \vdots             &amp;   &amp;        \\
+\end{pmatrix}
+\\
+\\
+G_2 =
+\begin{pmatrix}
+&amp;             &amp; \vdots             &amp;             &amp;         &amp;             &amp; \vdots             &amp;             &amp;        \\
+\ldots &amp; \frac{1}{M} &amp; \frac{1}{M}        &amp; \frac{1}{M} &amp; \ldots  &amp; \frac{1}{M} &amp; \frac{1}{M}        &amp; \frac{1}{M} &amp; \ldots \\
+&amp;             &amp; \vdots             &amp;             &amp;         &amp;             &amp; \vdots             &amp;             &amp;        \\
+\ldots &amp; 0           &amp; \frac{1}{\#(P_i)} &amp; 0           &amp; \ldots  &amp; 0           &amp; \frac{1}{\#(P_i)} &amp; 0           &amp; \ldots \\
+&amp;             &amp; \vdots             &amp;             &amp;         &amp;             &amp; \vdots             &amp;             &amp;        \\
+\end{pmatrix}
+\
+$$</p>
+</li>
+<li>
+<p>If $T$ is the walk length, then as $T \rightarrow \infty$, the values $N(P)/T$ should converge.
+This becomes an issue if there are disconnected graphs or if the graph is bipartite (and the probability of being in one side depends if the path length is odd or even).</p>
+<p><strong>Solution:</strong>
+Randomly jump to a new page after some time.</p>
+<p>This transformation does not change the rows corresponding to dangling webpages: $\alpha / M + (1 - \alpha) / M = 1/M$
+$$
+G =
+\begin{pmatrix}
+&amp;                      &amp; \vdots                                    &amp;                      &amp;         &amp;                      &amp; \vdots                                    &amp;                      &amp;        \\
+\ldots &amp; \frac{1}{M}          &amp; \frac{1}{M}                               &amp; \frac{1}{M}          &amp; \ldots  &amp; \frac{1}{M}          &amp; \frac{1}{M}                               &amp; \frac{1}{M}          &amp; \ldots \\
+&amp;                      &amp; \vdots                                    &amp;                      &amp;         &amp;                      &amp; \vdots                                    &amp;                      &amp;        \\
+\ldots &amp; \frac{1 - \alpha}{M} &amp; \frac{\alpha}{\#(P_i)} + \frac{1 - \alpha}{M} &amp; \frac{1 - \alpha}{M} &amp; \ldots  &amp; \frac{1 - \alpha}{M} &amp; \frac{\alpha}{\#(P_i)} + \frac{1 - \alpha}{M} &amp; \frac{1 - \alpha}{M} &amp; \ldots \\
+&amp;                      &amp; \vdots                                    &amp;                      &amp;         &amp;                      &amp; \vdots                                    &amp;                      &amp;        \\
+\end{pmatrix}
+\
+$$</p>
+</li>
+</ol>
+<p>These two solutions allow the ranks to converge, because the model works like a well behaved Markov Chain.</p>
+<p>To implement the first solution:</p>
+<p>Let $d$ be 1 at positions $i$ which correspond to dangling webpages and 0 elsewhere</p>
+<p>$$\mathbf{d}^\intercal = (0 \ &hellip; \ 0 \ 1 \ 0 \ &hellip; \ 0 \ 1 \ 0 \ &hellip; \ 0 \ 1 \ 0 \ &hellip; \ 0)$$</p>
+<p>Let $\mathbf{e}$ be 1 everywhere: $\mathbf{e}^\intercal = (1 \ 1 \ &hellip; \ 1)$.</p>
+<p>Then
+$$G_2 = G_1 + \frac{1}{M} \mathbf{d} \mathbf{e}^\intercal$$</p>
+<p>To implement the second solution as well, we get $G$ as:</p>
+<p>$$G = \alpha G_2 + \frac{1 - \alpha}{M} \mathbf{e} \mathbf{e}^\intercal = \alpha \left( G_1 + \frac{1}{M} \mathbf{d} \mathbf{e}^\intercal \right) + \frac{1 - \alpha}{M} \mathbf{e} \mathbf{e}^\intercal$$</p>
+<p>$G$ is no longer sparse, but the vector matrix product $\mathbf{x}^\intercal G$ for vectors $\mathbf{x}$ whose coordinates sum up to 1 can be decomposed as:</p>
+<p>$$\mathbf{x}^\intercal = \alpha \mathbf{x}^\intercal G_1 + \frac{1}{M} \left(1 - \alpha (1 - \mathbf{x}^\intercal \mathbf{d}) \right) \mathbf{e}^\intercal$$</p>
+<h3 id="markov-chains-discrete-time-markov-processes">Markov Chains (Discrete Time Markov Processes)</h3>
+<p>A (finite) Markov Chain is given by a finite set of states $S = \{P_i\}_{i \leq M}$ and by a row stochastic matrix $G$.
+The process can start at $t = 0$ in any of its states and continue its evolution by going at every discrete moment of time from its present state to another randomly chosen state.</p>
+<p>The model of the random walk on the graph is an example of a Markov Chain:</p>
+<ul>
+<li>States are &ldquo;being at a webpage $P_i$&rdquo;, so we have in total $M$ states, one for each web page $P_i$, $1 \leq i \leq M$.</li>
+<li>We start from a randomly chosen starting web page.</li>
+<li>Thus, $q^{(0)}(i) = \frac{1}{M}$ for all $i$, because all pages are equally likely to be the starting page.</li>
+<li>If a webpage $P_i$ is not a dangling webpage, follow a link on the page $P_i$ which points to another webpage $P_j$ with prob $\frac{\alpha}{\#(P_i)}$, or jump directly to a page $P_j$ with probability $\frac{1 - \alpha}{M}$.
+<ul>
+<li>Hence if a page $P_i$ does not point to a page $P_j$ then $g_{i, j} = \frac{1 - \alpha}{M}$.</li>
+</ul>
+</li>
+<li>If $P_i$ is a dangling page then $g_{i, j} = \frac{1}{M}$ for every page $P_j$ (including the same page $P_i$).</li>
+</ul>
+<h4 id="general-markov-chains">General Markov Chains</h4>
+<ul>
+<li>The Google matrix induces a strongly connected graph (as there is a directed edge between any two vertices), and so is <strong>irreducible</strong>.</li>
+<li>The Google matrix ix <strong>aperiodic</strong>
+<ul>
+<li>A state $P_i$ in a Markov chain si periodic if there exists integer $K &gt; 1$ s.t. all loops in its underlying graph which contain vertex $P_i$ have length divisible by $K$.</li>
+<li>Markov chains which do not have any periodic states are called aperiodic</li>
+</ul>
+</li>
+<li>For any finite, irreducible and aperiodic Markov chain has the following properties:
+<ol>
+<li>For every initial distribution of states $\mathbf{q}^{(0)}$ the value of $\mathbf{q}^{(t)} = \mathbf{q}^{(0)}G^t$ converges as $t \rightarrow \infty$ to a unique stationary distribution $\mathbf{q}$, i.e., converges to a unique distribution $\mathbf{q}$ which is independent of $\mathbf{q}^{(0)}$ and satisfies $\mathbf{q} = \mathbf{q}G$.</li>
+<li>Note: in the above $\mathbf{q}$ is a row vector, to avoid having to always transpose it.</li>
+<li>Let $N(P_i, T)$ be the number of times the system has ben in state $P_i$ during $T$ many transitions of such a Markov chain, then
+$$\lim_{T \rightarrow \infty} \frac{N(P_i, T)}{T}= \mathbf{q_i}$$</li>
+</ol>
+</li>
+</ul>
+<h4 id="application-to-pagerank">Application to PageRank</h4>
+<p>The general theorem on Markov chains implies that:</p>
+<ul>
+<li>1 is the left eigenvalue of $G$ of the largest absolute value, and the <em>stationary distribution</em> $\mathbf{q}$ is the corresponding left hand side eigenvector, $\mathbf{q}^\intercal = \mathbf{q}^\intercal G$.</li>
+<li>$\mathbf{q}$ is unique, i.e., if $\mathbf{q}_1^\intercal = \mathbf{q}_1^\intercal G$, then $\mathbf{q}_1 = \mathbf{q}$</li>
+<li>Distribution $\mathbf{q}$ can be obtained by starting with an arbitrary initial probability distribution $\mathbf{q}_0$ and obtain $\mathbf{q}$ as $\lim_{k \rightarrow \infty} \mathbf{q}_0^\intercal G^k$</li>
+<li>An approximation $\mathbf{\tilde{q}}$ of $\mathbf{q}$ can be obtained by taking $\mathbf{q}_o^\intercal = (1/M, 1/M, &hellip;, 1/M)$ and a sufficiently large $K$ and computing $\mathbf{\tilde{q}} = \mathbf{q}_0 G^k$ iteratively</li>
+<li>The $i^{th}$ coordinate of such obtained distribution $\mathbf{q}^\intercal = (q_1, &hellip;, q_i, &hellip;, q_M)$ roughly gives the ratio $N(P_i, T)/T$ where $N(P_i, T)$ is the number of times $P_i$ has been visited during a surfing session of length $T$.</li>
+</ul>
+<h4 id="finding-alpha">Finding alpha</h4>
+<p>How close to 1 should $\alpha$ be?</p>
+<p>The <em>expected</em> length $lh$ of surfing between two teleportations can be found as:</p>
+<p>$$
+\begin{align*}
+E(lh)
+&amp;= 0(1 - \alpha) + \alpha(1 - \alpha) + &hellip; + k \alpha^k (1 - \alpha) + &hellip; \\
+&amp;= \alpha(1 - \alpha)(1 + 2 \alpha + &hellip; + k \alpha^{k - 1} + &hellip;) \\
+&amp;= \frac{\alpha}{1 - \alpha}.
+\end{align*}
+$$</p>
+<p>Google uses $\alpha = 0.85$ (obtained empirically), giving an expected surfing length $\frac{0.85}{1- 0.85}\approx 5.7$, very close to 6 (coming from the idea of <em>six degrees of separation</em>), and it takes approx $50 - 100$ iterations for convergence.</p>
+<p>Larger values produce more accurate representation of &ldquo;importance&rdquo; of a webpage, but the convergence slows down fast.</p>
+<p>Error of approximation of $\mathbf{q}$ by $\mathbf{q_0}G^k$ decreases approximately as $\alpha^k$.
+More importantly, increasing $\alpha$ increases the sensitivity of the resulting PageRank.
+This is not effective as internet content and structure changes on a daily basis, but PageRank should change slowly.</p>
+<h2 id="hidden-markov-models-and-the-viterbi-algorithm-and-its-applications">Hidden Markov Models and the Viterbi Algorithm and its applications</h2>
+<p>A Hidden Markov Model is a Markov Model that has two states:</p>
+<ul>
+<li>observations</li>
+<li>hidden states</li>
+</ul>
+<p>An example of it&rsquo;s application, is given a sequence of manifestations, how can we determine what sequence of states caused it?</p>
+<p>We do it in a way that maximises the likelihood that we are correct which is what the <strong>Viterbi algorithm</strong> does. It is a dynamic programming algorithm that produces the most likely estimate.</p>
+<h3 id="hidden-markov-models">Hidden Markov Models</h3>
+<ul>
+<li>If we are given a finite Markov chain, consisting of a set of its states $S = \{s_1, s_2, &hellip;, s_K \}$.</li>
+<li>We are also given the initial probabilities $\pi_1, \pi_2, &hellip;, \pi_K$ of states.</li>
+<li>However, we have no access to the direct states, we only have the set of observables $O = \{o_1, o_2, &hellip;, o_N \}$ which are the possible manifestations of the states $S = \{s_1, s_2, &hellip;, s_K \}$.</li>
+<li>We are also given the emission matrix $E$ of size $K \times N$ where entry $e(i, k)$ represents the probability that when the chain is in state $s_i$, the observable outcome will be $o_k$.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h3>
+<p>Likelihood is, in a sense, an inverse of probability.</p>
+<ul>
+<li>Assume there are $n$ balls labeled 1 to $n$, and you can draw a single ball, look at its value, and have to estimate the value of $n$.</li>
+<li>Assume you drew the ball numbered $k$, which has a probability of $1 / n$. Therefore you have the highest chance of picking $k$ when $n$ is as small as possible, meaning it $n = k$ (as you know there are at least $k$ balls).</li>
+<li>In this case the MLE estimator is $N(X) = X$, and $E(X)$ is given by
+$$\mu = \sum_{i=1}^{n}\left( i \times \frac{1}{n} \right) = \frac{n(n + 1)}{2n} = \frac{n + 1}{2}.$$
+Thus, this is biased, because the expected value is half of $n$.</li>
+<li>If we ues the estimator $Y(X) = 2X - 1$, then the expected value of $Y$ is
+$$\sum_{i = 1}^{n} \frac{2i - 1}{n} = \frac{2\sum_{i=1}^{n}i}{n} - \frac{\sum_{i=1}^n 1}{n} = \frac{2n(n+1)}{2n} - 1 = n$$
+and this is unbiased.</li>
+<li>As the size of the sample increases, ML estimate approaches the best possible estimate.</li>
+</ul>
+<h3 id="viterbi-algorithm">Viterbi Algorithm</h3>
+<p>Assume we are given a sequence of observable outcomes $(y_1, y_2, y_r)$.
+The goal is to find the sequence $(x_1, x_2, &hellip;, x_r)$ of states of the Markov chain for which the likelihood that such a sequence is the cause of the observed sequence of outcomes is the highest.</p>
+<ul>
+<li>Given $\vec{y}$ observed, we could pick the sequence of states $\vec{x}$ for which the value of $P(\vec{x}, \vec{y})$ is the largest.</li>
+<li>This is not feasible, as if the total number of states is $K$ and the observed sequence is of length $T$ then there are $K^T$ sequences to try.</li>
+<li>Instead the Viterbi algorithm solves this problem in $O(T \times K^2)$ using dynamic programming.</li>
+</ul>
+<h4 id="algorithm-1">Algorithm</h4>
+<p>We solve all subproblems $S(i, k)$ for every $i \leq i \leq T$ and every $1 \leq k \leq K$:</p>
+<p><strong>Subproblem</strong> $S(i, k)$: Find the sequence of states $(x_1, &hellip;, x_i)$ such that $x_i = s_k$ and such that the probability of observing the outcome $(y_1, &hellip;, y_i)$ is maximal.</p>
+<p>A <a href="https://www.youtube.com/watch?v=kqSzLo9fenk">good intro to Hidden Markov Models and the Viterbi Algorithm</a>.</p>
+<h2 id="recommender-systems">Recommender Systems</h2>
+<p>The main purpose of recommender systems is to recommend content / products to users that they may enjoy.</p>
+<p>Two major kinds of recommender systems:</p>
+<ul>
+<li><strong>Content based:</strong> items are recommended by their intrinsic similarity
+<ul>
+<li>This suffers from the problem that content usually has to be done by humans because content is a semantic notion (which computers do not understand well)</li>
+</ul>
+</li>
+<li><strong>Collaborative filtering:</strong> items are recommended based on some similarity measure between users and between items based on rating of items by the community of users
+<ul>
+<li>This tends to be superior in performance and does not rely on human advice</li>
+<li>There are two main approaches:</li>
+<li><strong>Neighbourhood Method:</strong>
+<ul>
+<li>Based on the similarity of users</li>
+<li>If $A$ and $B$ gave similar evaluations to movies that they have both seen, if $A$ liked something $b$ has not seen, then $B$ may like it as well</li>
+</ul>
+</li>
+<li><strong>Latent Factor Method:</strong>
+<ul>
+<li>Based on the similarity of items</li>
+<li>Assume two movies $M_1$ and $M_2$ had similar ratings, then if someone liked $M_1$, then it is reasonable to recommend movie $M_2$ to such a user</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>We can construct a sparsely populated table of ratings $R$, the rows correspond to movies, the columns to users.
+The entry $r(i, j)$ of the table, if non empty, represents teh rating user $U_i$ gave to some movie $M_j$
+Each entry may have some rating in range $0 - 5$ (or a similar relatively small rating range, usually with at most 10 or so levels).</p>
+<h3 id="neighbourhood-method">Neighbourhood Method</h3>
+<p>We replace these rating integers with more informative numbers.</p>
+<ul>
+<li>First we compute the mean $\bar{r}$ of all ratings for all movies</li>
+<li>Then we obtain $\bar{R}$ by subtracting $\bar{r}$ from all values</li>
+<li>Now if a value $r&rsquo;(i, j) &gt; 0$ then $U_i$ liked $M_j$ above the global average ($r&rsquo;(i, j)$ can be positive or negative with equal probability).
+However, some ratings may be influenced by &ldquo;hype&rdquo; or &ldquo;trendiness&rdquo; AKA  systematic biases&quot;.</li>
+<li>To remove this:
+<ul>
+<li>For every user $U_i$, introduce $v_i$, the &ldquo;individual bias&rdquo; of user $U_i$, reflecting tendency to give overall higher or lower scores.</li>
+<li>For every movie $M_j$, introduce $\mu_j$, the &ldquo;hype bias&rdquo; of movie $M_j$ which is how &ldquo;fashionable&rdquo; the movie is (which fades with time).</li>
+<li>Both systematic biases can be removed by seeking the values of $v_i$ and $\mu_j$ which minimises the expression
+$$S(\vec{v}, \vec{\mu}) = \sum_{(i, j) \in R}(r&rsquo;(i, j) - v_i - \mu_j)^2$$</li>
+<li>Note that $\mu$&rsquo;s are constant shifts of rows (each row corresponding to a movie) and $v$&rsquo;s are constant shifts of columns (each corresponding to a user).
+This is a <strong>Least squares</strong> problem, and $S(\vec{v}, \vec{\mu})$ achieves a minimum when all the partial derivatives are equal to 0:
+$$
+\begin{align*}
+\frac{\partial}{\partial v_i}S(\vec{v}, \vec{\mu}) &amp;= -2 \sum_{j:(i, j) \in R}(r&rsquo;(j, i) - v_i - \mu_j) = 0 \\\
+\frac{\partial}{\partial \mu_j}S(\vec{v}, \vec{\mu}) &amp;= -2 \sum_{i:(i, j) \in R}(r&rsquo;(j, i) - v_i - \mu_j) = 0 \\\
+\end{align*}
+$$</li>
+<li>Unfortunately, Least Squares fits usually suffer from overfitting.
+The solution for this is called <strong>regularisation</strong>: where we introduce a term which penalises for large values of the variables.
+Thus instead, we minimise the sum:
+$$S(\vec{v}, \vec{\mu}, \lambda) = \sum_{(i, j) \in R}(r&rsquo;(i, j) - v_i - \mu_j)^2 + \lambda \left( \sum_i v_i^2 + \sum_j \mu_j^2 \right)$$
+where $\lambda$ is a suitably chosen small positive constant, usually $10^{-10} \leq \lambda \leq 10^{-2}$ (the optimal value of $\lambda$ can also be &ldquo;learned&rdquo;)</li>
+<li>We now obtain from $\bar{R}$ $\tilde{R}$ and are ready to estimate similarities of users and movies</li>
+</ul>
+</li>
+</ul>
+<h4 id="neighbourhood-method---similarity-of-users">Neighbourhood Method - Similarity of users</h4>
+<p>One of the most frequently used measure of similarity of users is the <strong>cosine similarity measure</strong>.</p>
+<p>If we want to compare 2 users $U_i$ and $U_k$, we find all movies that both users have ranked and delete all other entries.
+We obtain two column vectors $\vec{u}_1$ and $\vec{v}_k$, and the similarity of the two users is measured by the cosine of the angle between these two vectors.</p>
+<p>$$
+\begin{align*}
+\text{sim}(U_i, U_k)
+&amp;= \cos(u_i, u_k) \\
+&amp;= \frac{\langle \vec{u}_i, \vec{u}_k \rangle}{|\vec{u}_i| \cdot |\vec{u}_k|}
+\end{align*}
+$$</p>
+<p>We can now predict the rating a user $U_i$ would give to a movie $M_j$ they have not seen as follows:</p>
+<ol>
+<li>Among all users who have seen $M_j$, pick $L$ many users $U_{k_l}$ with $L$ largest values of $|\text{sim}(U_i, U_{k_l})|$ (i.e. the $L$ top similar and dissimilar values).</li>
+<li>We now predict the rating user $U_i$ would give to movie $M_j$ as
+$$\text{pred}(i, j) = \bar{r} + v_i + \mu_j + \frac{\sum_{1 \leq l \leq L} \text{sim}(U_i, U_{k_l}) \tilde{r}(j, k_l)}{\sum_{1 \leq l \leq L} |\text{sim}(U_i, U_{k_l})|}$$</li>
+<li>We then recommend to user $U_i$ movie $M_j$ for which the predicted rating $\text{pred}(i, j)$ is the highest
+<ul>
+<li>The &ldquo;hype factor&rdquo; $\mu_j$ is brought back when deciding what to recommend).</li>
+<li>$v_i$ is constant across movies, so it is insignificant; adding it is mostly for test purposes because it will realistically predict the possible rating of $U_i$ of $M_j$ allowing easy comparison in tests</li>
+</ul>
+</li>
+</ol>
+<h4 id="neighbourhood-method---similarity-of-movies">Neighbourhood Method - Similarity of movies</h4>
+<p>We can in a similar way estimate similarity of movies, working on the columns of $\tilde{R}$ (instead of rows).
+We predict the rating user $U_i$ would give to the move $M_j$ as</p>
+<p>$$
+\text{pred} =
+\bar{r} + v_i + \mu_j + \frac{\sum_{1 \leq l \leq L} \text{sim}(M_j, M_{n_l}) \tilde{r}(n_l, i)}{\sum_{1 \leq l \leq L} |\text{sim}(M_j, M_{n_l})|}
+$$</p>
+<p>and recommend the movie $M_j$ that has the highest value of $\text{pred}(j, i)$.</p>
+<h3 id="latent-factor-method">Latent Factor Method</h3>
+<p>This method relies on several heuristics</p>
+<ul>
+<li>
+<p>There are features movies posses which appeal to different tastes which determine how much a user likes a movie. I.e. &ldquo;action&rdquo;, &ldquo;comedy&rdquo;, &ldquo;romance&rdquo;, &ldquo;famous actors&rdquo;, &ldquo;special effects&rdquo;</p>
+</li>
+<li>
+<p>Enumerate these features as $f_1, f_2, &hellip;, f_N$ where $N$ is to the order of a few 10s to a few 100s
+A movie can have each of these features, say $f_i$ to an extent $e_i$, where say $0 \leq e_i \leq 10$.</p>
+</li>
+<li>
+<p>Each movie $M_j$ has a vector $\vec{e}^j$ of length $N$, and we can form a matrix $F$ s.t. rows of $F$ correspond to movies and columns correspond to features. I.e. if we have $M$ movies:
+$$
+F =
+\begin{pmatrix}
+F_{1, 1}  &amp; \ldots &amp; F_{1, N} \\
+\vdots    &amp; \vdots &amp; \vdots   \\
+\vdots    &amp; \vdots &amp; \vdots   \\
+\vdots    &amp; \vdots &amp; \vdots   \\
+\vdots    &amp; \vdots &amp; \vdots   \\
+\vdots    &amp; \vdots &amp; \vdots   \\
+F_{M, 1}  &amp; \ldots &amp; F_{M, N}
+\end{pmatrix}
+$$
+resulting in a very tall matrix</p>
+</li>
+<li>
+<p>We can associate each user $U_i$ with a column vector $\vec{l}^i$ s.t. its $m^{th}$ coordinate is a number, $0 \leq \vec{l}^i_m \leq 10$ which represents how much a user likes a feature $f_m$ in a movie.</p>
+</li>
+<li>
+<p>We can now form a matrix $L$ whose rows correspond to features and columns correspond to users.
+$$
+L =
+\begin{pmatrix}
+L_{1, 1}  &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; L_{1, N} \\
+\vdots    &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \vdots   \\
+L_{M, 1}  &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; L_{M, N}
+\end{pmatrix}
+$$
+resulting in a very wide matrix</p>
+</li>
+</ul>
+<p>Assume that we have access to $L$ and $F$.
+Then to predict how much $U_i$ likes $M_j$, we evaluate</p>
+<p>$$E(j, i) = \sum_{1 \leq m \leq N} (\vec{e}^j)_m (\vec{l}^i)_m = \langle \vec{e}^j, \vec{l}^i \rangle.$$</p>
+<p>and as a result can generate $E = F \times L$, resulting in a very large matrix.
+However, the issue is that we cannot determine which few dozen features are relevant out of a few hundred features.</p>
+<h4 id="finding-relevant-features">Finding relevant features</h4>
+<p>Let $N$ be the number of features we want (typically $20 \leq N \leq 200$), $\#M$ by the number of movies, and $\#U$ be the number of users.</p>
+<p>Fill matrices $F$ of size $\#M \times N$ and $L$ of size $N \times \#U$ with variables $F(j, m)$ and $L(m, i)$ whose values have yet to be determined.</p>
+<p>Then sole the least squares problem in the variables
+$$\{ F(j, m): 1 \leq j \leq \#M; 1 \leq m \leq N \} \cup \{ L(m, i) : 1 \leq m \leq N; 1 \leq i \leq \#U \}$$</p>
+<p>minimise</p>
+<p>$$S(\vec{F}, \vec{L}) = \sum_{(j, i):R(j, i)} \left( \sum_{1 \leq m \leq N} F(j, m) \cdot L(m, i) - R(j, i) \right)^2$$</p>
+<p>We can attempt to find the minimum by finding the when the partial derivative of $S(\vec{F}, \vec{L})$ is equal to 0.
+However:</p>
+<ul>
+<li>this results in a huge system of cubic equations that cannot be solved feasibly</li>
+<li>an optimisation problem is not convex, so search for the optimal solution can end up in a local minimum</li>
+</ul>
+<p>Solution:</p>
+<ol>
+<li>
+<p>Set all variables $F(j, m)$ to the same value $F^{(0)}(j, m)$ as a median value</p>
+</li>
+<li>
+<p>Now solve the following Least Squares problem for the variables
+$$\{ L(m, i) : 1 \leq m \leq N; 1 \leq i \leq \#U \}$$
+minimise
+$$\sum_{j, i}: R(j, i) \left(\sum{1 \leq m \leq N} F^{(0)}(j, m) \cdot L(m, i) - R(j, i) \right)^2$$
+which is now a system of linear equations as after we find the partials $F^{(0)}(j, m)$ is set to 0.</p>
+</li>
+<li>
+<p>Let $L^{(0)}(m, i)$ be the solutions to such a Least Squares problem.</p>
+</li>
+<li>
+<p>We now solve the following Least Squares problem in variables
+$$\{ F(j, m): 1 \leq j \leq \#M; 1 \leq m \leq N \}$$
+minimise
+$$\sum_{(j, i):R(j, i)} \left( \sum_{1 \leq m \leq N} F(j, m) \cdot L^{(0)}(m, i) - R(j, i) \right)^2$$</p>
+</li>
+<li>
+<p>Now, we keep alternating between taking either $\{ L(m, i) : 1 \leq m \leq N; 1 \leq i \leq \#U \}$ or $\{ F(j, m): 1 \leq j \leq \#M; 1 \leq m \leq N \}$ as free variables, fixing the values of the other set from the previously obtained solution to the corresponding Least Squares problem.</p>
+<p>This method is sometimes called <strong>Method of Alternating Projections</strong>.</p>
+</li>
+<li>
+<p>We stop such iterations when
+$$\sum_{(j. m)}(F^{(k)}(j. m) - F^{(k - 1)}(j. m))^2 + \sum_{(i. m)}(L^{(k)}(m, i) - L^{(k - 1)}(m, i))^2$$
+becomes smaller than an accuracy threshold $\epsilon &gt; 0$.</p>
+</li>
+<li>
+<p>After we obtain the values $F^{(k)}(j, m)$ and $L^{(k)}(m, i)$ from the last iteration $k$, we form teh corresponding matrices $F$ of size $\#M \times N$ and $L$ of size $N \times \#U$ as
+$$
+\begin{align*}
+\tilde{F} &amp;= \left( F^{(k)}(j, m) : 1 \leq j \leq \#M; 1 \leq m \leq N \right) \\
+\tilde{L} &amp;= \left( L^{(k)}(m, i) : 1 \leq m \leq \#M; 1 \leq m \leq \#U \right) \\
+\end{align*}
+$$</p>
+</li>
+<li>
+<p>We finally set $E = \tilde{F} \times \tilde{L}$ as the final matrix of predicted ratings of all movies by all users, where $E(j, i)$ is the prediction of the rating of movie $M_j$ by user $U_i$.</p>
+</li>
+</ol>
+<ul>
+<li>Note we do not know what these latent features actually are</li>
+<li>However, the Latent Factor Method performs remarkably well in many domains</li>
+<li>Though in a Netflix Challenge competition to design the best recommendation algorithm, the top algorithms were combination of dozens of components / algorithms with empirically tuned parameters</li>
+</ul>
+<h2 id="clustering-algorithms">Clustering Algorithms</h2>
+<p>Clustering algorithms are a type of unsupervised learning used in data science.</p>
+<p>There are two kinds of clusters:</p>
+<ol>
+<li>center - based clusters</li>
+<li>high density clusters</li>
+</ol>
+<p>A good clustering algorithm should be able to handle both kinds.</p>
+<h3 id="data-representation">Data Representation</h3>
+<p>There are two common representations of points</p>
+<h4 id="as-vectors-in-mathbbrd">As vectors in $\mathbb{R}^d$</h4>
+<ul>
+<li>This is suitable when you have several numerical measurements (and each measurement maps to a dimension).</li>
+<li>Note $d$ can be extremely large, corresponding to thousands or more, and can be complex to store and handle such data. This is where Johnson - Lindenstrauss Theorem comes to play.</li>
+</ul>
+<h4 id="as-a-weighted-graph">As a weighted graph</h4>
+<ul>
+<li>Data points are represented as vertices of the graph</li>
+<li>The weights of the edges reflect the degree of similarity (or dissimilarity) of the data points.
+The distance between two data points $x, y \in \mathbb{R}^d$ can be defined as either
+$$d(x, y) = \sum_{i=1}^d |x_i - y_i| \quad \text{or} \quad d(x, y) = \sqrt{\sum_{i=1}^d (x_i - y_i)^2}$$</li>
+<li>If the scales of the $i^{th}$ and $j^{th}$ coordinates $x_i$ and $x_j$ differ significantly, or if they are not of equal importance, we might consider instead
+$$d(x, y)^2 = \sum_{i=1}^d w_i(x_i - y_i)^2$$
+where the weights $w_i$ are chosen to normalise different variances of $x_i$ and $x_j$ or to encode their relative significances.</li>
+<li>Graph representation of data is often much more compact than vectors, as it does not suffer from problems of high dimensionality.</li>
+<li>However, the geometry of the data is lost, so the clustering is based only on mutual distances of pairs of points, which is good when clustering is not center based.</li>
+</ul>
+<h3 id="center-based-clustering-algorithms">Center-based Clustering Algorithms</h3>
+<p>We assume data points are represented as vectors in $\mathbb{R}^d$.</p>
+<h4 id="k-center-clustering">k-center clustering</h4>
+<p>Find a partition $C = \{C_1, &hellip;, C_k \}$ of a set of data points $A = \{\mathbf{a_1}, &hellip;, \mathbf{a_n} \}$ into $k$ clusters, with the corresponding centers $\mathbf{c_1}, &hellip;, \mathbf{c_k}$ which minimises</p>
+<p>$$\Phi(C) = \max_{j=1}^k \max_{a \in C_j} d(\mathbf{a}, \mathbf{c_j})$$</p>
+<p>This will minimise the radius of the cluster (as the radius of a cluster is the furthest distance from the cluster center).</p>
+<h4 id="k-median-clustering">k-median clustering</h4>
+<p>Find a partition $C = \{C_1, &hellip;, C_k \}$ of a set of data points $A = \{\mathbf{a_1}, &hellip;, \mathbf{a_n} \}$ into $k$ clusters, with the corresponding centers $\mathbf{c_1}, &hellip;, \mathbf{c_k}$ which minimises</p>
+<p>$$\Phi(C) = \sum_{j=1}^k \sum_{a \in C_j} d(\mathbf{a}, \mathbf{c_j})$$</p>
+<p>$d(\mathbf{a}, \mathbf{c}_j)$ can be any distance metric, such as</p>
+<ul>
+<li>$l_1$: $d(\mathbf{a}, \mathbf{c}<em>j) = \sum</em>{k=1}^d| (\mathbf{a})_k - (\mathbf{c}_j)_k |$</li>
+<li>$l_2$: $d(\mathbf{a}, \mathbf{c}<em>j) = \sqrt{\sum</em>{k=1}^d ((\mathbf{a})_k - (\mathbf{c}_j)_k)^2}$
+If the distance is the $l_1$ distance, one can show that the coordinates of the optimal centers are the coordinate-wise medians of points in each cluster.</li>
+</ul>
+<h4 id="k-means-clustering">k-means clustering</h4>
+<p>This is the most frequently used center based clustering algorithm.
+It is similar to the k-median clustering, except we want to minimise</p>
+<p>$$\Phi(C) = \sum_{j=1}^k \sum_{a \in C_j} d(\mathbf{a}, \mathbf{c_j})^2$$</p>
+<ul>
+<li>This penalises more for larger distances than the k-median clustering</li>
+<li>This has other nice properties; for example, if $d(\mathbf{a}, \mathbf{c_j})^2 = \sum_{j=1}^d (a_i - c_{ji})^2$  then $\mathbf{c_j}$ must be the centroids of the points in their cluster.</li>
+</ul>
+<h4 id="definitions">Definitions</h4>
+<p><strong>Finding the centroid</strong></p>
+<p>Since</p>
+<p>$$\mathbf{a_i} = (a_{i1}, &hellip;, a_{id})$$</p>
+<p>let $\mathbf{c} = (c_1, &hellip;, c_d)$ with for all $1 \leq k \leq d$,</p>
+<p>$$c_k = (a_{1k} + &hellip; + a_{nk}) / n$$</p>
+<p>As a result, $c_k$ is the arithmetic mean of the $k^{th}$ coordinates of all the points $\{ \mathbf{a}_1, &hellip;, \mathbf{a}_n \}$.
+Hence, $\mathbf{c}$ is called the centroid of the set of points $\{ \mathbf{a}_1, &hellip;, \mathbf{a}_n \}$.</p>
+<p><strong>Finding the distance</strong></p>
+<p>Then $\mathbf{c}$ is called the centroid of the set of points $\{ \mathbf{a_1}, &hellip;, \mathbf{a_n} \}$.</p>
+<p>We denote $\mathbf{x} \cdot \mathbf{y}$ the scalar product of vectors $\mathbf{x}$ and $\mathbf{y}$ by $|| \mathbf{x} ||$ the norm of a vector $\mathbf{x}$, i.e.</p>
+<p>$$\mathbf{x} \cdot \mathbf{y} = \sum_{i=1}^d x_i y_i \quad \text{and} \quad ||x|| = \sqrt{\sum{i=1}^d x_i^2} = \sqrt{\mathbf{x} \cdot \mathbf{x}}$$</p>
+<p>Note that $|| \mathbf{x} - \mathbf{y} ||$ is the Euclidean distance of points $\mathbf{x}$ and $\mathbf{y}$:</p>
+<p>$$|| \mathbf{x} - \mathbf{y} || = \sqrt{\sum_{i=1}^d(x_i - y_i)^2}$$</p>
+<p><strong>Theorem</strong></p>
+<p>Let $A = \{\mathbf{a_1}, &hellip;, \mathbf{a_n} \}$ be a set of points and $\mathbf{x}$ be another point, all in $\mathbb{R}^d$. Let also $\mathbf{c}$ be the centroid of $A$.
+Then</p>
+<p>$$\sum_{i=1}^n || \mathbf{a_i} - \mathbf{x} ||^2 + n||\mathbf{c} - \mathbf{x}||^2$$</p>
+<p><strong>Corollary</strong></p>
+<p>Let $A = \{\mathbf{a_1}, &hellip;, \mathbf{a_n} \}$ be a set of points and $\mathbf{x}$ be another point, all in $\mathbb{R}^d$.
+Then</p>
+<p>$$D(x) = \sum_{i=1}^n || \mathbf{a_i} - \mathbf{x} ||^2$$</p>
+<p>is minimised when $\mathbf{x}$ is the centroid $\mathbf{c} = \frac{1}{n} \sum_{i=1}^n \mathbf{x_i}$.</p>
+<h4 id="implementation">Implementation</h4>
+<p>Thus, to find a partition of set of points $A$ into $k$ disjoint components $A = \bigcup_{i=1}^k A_i$ and $k$ points $\mathbf{x_1}, &hellip;, \mathbf{x_k}$ such that the sum</p>
+<p>$$\sum{j=1}^k \sum{\mathbf{a_i} \in A_j} || \mathbf{a_i} - \mathbf{x_j} ||^2$$</p>
+<p>is as small as possible, then whatever such an optimal partition $\{ A_j : 1 \leq j \leq k \}$ might be, the points $\mathbf{x_j}$ must be the centroids $\mathbf{c_j}$ of sets $A_j$.</p>
+<p>Hence, finding the $k$ clusters is equivalent to minimising</p>
+<p>$$\sum_{m=1}^k \frac{1}{2|A_m|} \sum_{\mathbf{a_i}, \mathbf{a_j} \in A_m} || \mathbf{a_i} - \mathbf{a_j} ||^2$$</p>
+<h4 id="lloyds-algorithm">Lloyd&rsquo;s Algorithm</h4>
+<p>Solving the optimal k-means clustering is NP hard, so we use approximate algorithms.</p>
+<p>The best known approximate k-means clustering algorithm is Lloyd&rsquo;s algorithm.</p>
+<ol>
+<li>Start with an initial set of cluster centers $\{\mathbf{c}^{(0)}_m : 1 \leq m \leq k\}$</li>
+<li>Cluster all points $\mathbf{a} \in A$ into clusters $A_m$ by associating each $\mathbf{a} \in A$ with the nearest cluster centre.</li>
+<li>Replace cluster centres with the centroids of thus obtained clusters.</li>
+<li>Repeat 2 and 3 until cluster centers (and thus also clusters) stop changing.</li>
+</ol>
+<p>At every round $p$ of its loop, Lloyd&rsquo;s algorithm reduces the size of</p>
+<p>$$\sum_{m=1}^k \sum_{\mathbf{a}_j \in A_m^{(p)}} || \mathbf{a}_j - \mathbf{c}_m^{(p)} ||^2$$</p>
+<p>where $A_m^{(p)}$ are the &ldquo;temporary&rdquo; clusters and $\mathbf{c}^{(p)}_m$ is the &ldquo;temporary&rdquo; centre of cluster $A_m^{(p)}$ at round $p$ of the loop.</p>
+<p>However, the algorithm may stop at a local minimum and not the global minimum.</p>
+<ul>
+<li>We may choose to run this algorithm multiple times and return the best result</li>
+<li>Another algorithm called the <strong>Farthest Traversal k-clustering</strong> picks a random point $a_q$ from $A$ as the first center, and then pick the furthest point in $A$ from $a_q$ as the second point, and continue picking the next center as the one with the largest minimum distance from the already picked centers
+<ul>
+<li>If $A$ has a clustering radius of $r$, then this algorithm produces a radius at most $2r$.</li>
+</ul>
+</li>
+<li>We can randomise the selection by picking a point with probability proportional to the shortest distance to one of already picked points</li>
+</ul>
+<h4 id="wards-algorithm">Ward&rsquo;s Algorithm</h4>
+<p>Wards algorithm is a greedy k-means algorithm:</p>
+<ol>
+<li>
+<p>Start with every point $\mathbf{a}_i$ in its own cluster.</p>
+</li>
+<li>
+<p>While the number of clusters is larger than $k$ repeat:</p>
+<p>Find two clusters $C$ and $C&rsquo;$ such that
+$$\text{cost}(C \cup C&rsquo;) - \text{cost}(C) - \text{cost}(C&rsquo;)$$
+is as small as possible and replace them with a single merged cluster $C \cup C&rsquo;$ with its centroid as its centre</p>
+</li>
+</ol>
+<h3 id="center-based-clustering-algorithms-1">Center-based Clustering Algorithms</h3>
+<p>There are several ways to find non centre based clusters.</p>
+<h4 id="similarity-graphs">Similarity Graphs</h4>
+<p>Rather than representing a set of data points $A$ with their locations, we represent them as an undirected weighted graph $G = (V, E)$.</p>
+<ul>
+<li>The weight $w_{ij}$ of an edge $e = (v_i, v_j)$ is equal to a similarity measure of the data points.
+<ul>
+<li>If $w_{ij} = 0$ then the vertices $v_i$ and $v_j$ are completely dissimilar points, and so we do not include this edge</li>
+<li>Else the weight can depend on a decreasing function of the Euclidean distance, i.e.
+$$e^{-\frac{|| \mathbf{a}_i - \mathbf{a}_j ||^2}{2}}$$</li>
+</ul>
+</li>
+<li>Since the graph is weighted, the degree $d_i$ of a vertex $v_i$ is defined as
+$$d_i = \sum_{j=1}^n w_{ij}$$
+This degree matrix $D$ is a diagonal matrix with degree $d_i$ of vertex $v_i$ on the $i^{th}$ entry of the diagonal of $D$ and zeroes everywhere else</li>
+</ul>
+<p>From here there are several ways to cluster the points</p>
+<ol>
+<li><strong>The $\epsilon$-neighbourhood graph</strong>
+<ul>
+<li>We connect all pairs of vertices $v_i$, $v_j$ such that the distances between the data points $&lt; \epsilon$.</li>
+<li>This distance is usually the Euclidean distance</li>
+</ul>
+</li>
+<li><strong>The $k$-nearest neighbour graphs</strong>
+<ul>
+<li>There are two flavours of this
+<ol>
+<li><strong>Unidirectional k-nearest neighbour graph</strong>
+Connect $v_i$ with $v_j$ if either $v_j$ is among $k$ nearest neightours of $v_i$ <strong>or</strong> vice versa</li>
+<li><strong>Mutual k-nearest neighbour graph</strong>
+Connect $v_i$ with $v_j$ if both $v_j$ is among $k$ nearest neighbours of $v_i$ <strong>and</strong> vice versa</li>
+</ol>
+</li>
+<li>In both cases, the edge is then weighted with the degree of similarity of the vertices $v_i$ and $v_j$</li>
+</ul>
+</li>
+<li><strong>The fully connected graphs</strong>
+<ul>
+<li>Connect all pairs of vertices $v_i$ and $v_j$ where the corresponding data points have a strictly positive similarity or similarity higher than some threshold $\epsilon$.</li>
+<li>Often we take weights with the formula
+$$w_{ij} = e^{-\frac{|| \mathbf{a}_i - \mathbf{a}_j ||^2 }{2 \theta^2}}$$</li>
+<li>Here $\theta$ is a parameter which determines &ldquo;the size&rdquo; of the neighbourhood, namely how fast the similarity decreases as distance increases</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>However, there is no simple way to choose a similarity graph, the best way is to try and determine one empirically</li>
+</ul>
+<h4 id="spectral-graph-theory">Spectral Graph Theory</h4>
+<p>Recall that the $n \times n$ diagonal matrix $D$ has the degrees $d_i$ of vertices $v_i$ on its diagonal, where $d_i = \sum_{j=1}^n w_{ij}$.</p>
+<p>The (unnormalised) graph Laplacian matrix $L$ is defined as</p>
+<p>$$L = D - W$$</p>
+<p>where $W = (w_{ij})^n_{i, j = 1}$.</p>
+<p>Clearly $L$ is symmetric and does not depend on $w_{ii}$, $1 \leq i \leq n$.
+Graph Laplacians are crucial for spectral clustering.</p>
+<p>A matrix $M$ of size $n \times n$ is positive semi-definite if for all vectors $f \in \mathbb{R}^n$ we have</p>
+<p>$$f^\intercal M f \geq 0$$</p>
+<p>A symmetric matrix is positive semi-definite iff all of its eigvenvalues are real and non-negative.</p>
+<p>The matrix $L = D - W$ has the following properties:</p>
+<ol>
+<li>For every vector $f \in \mathbb{R}^n$,
+$$
+\begin{align*}
+f^\intercal L f
+&amp;= f^\intercal D f - f^\intercal W f \\
+&amp;= \sum_{i=1}^n d_i f_i^2 - \sum_{ij=1}^n w_{ij} f_i f_j \\
+&amp;= \frac{1}{2} \sum_{i, j = 1}^{n} w_{ij} (f_i - f_j)^2
+\end{align*}
+$$</li>
+<li>$L$ is a symmetric positive semi-definite matrix
+As shown from (1), since $w_{ij} \geq 0$, L satifies $f^\intercal L f \geq 0$ for all vectors $f$ and is thus positive semi-definite.</li>
+<li>The smallest eigenvalue of $L$ is 0 and its corresponding eigenvector is $\mathbb{1} = (1, 1, &hellip;, 1)$</li>
+</ol>
+<p>(Missing some Spectral Graph Theory)</p>
+<p><strong>Spectral Clustering Algorithm:</strong></p>
+<ol>
+<li>Construct a similarity graph $G$ by one of the way described and let $W$ be its weighted adjacency matrix</li>
+<li>Compute the Laplacian $L = D - W$.</li>
+<li>Compute the $k$ eigenvectors $\mathbf{e}_1, &hellip;, \mathbf{e}_k$ of $L$ which correspond to $k$ smallest eigenvalues.</li>
+<li>Let $E$ be the matrix of size $n \times k$ containing the eigenvectors $\mathbf{e}_1, &hellip;, \mathbf{e}_k$ as columns.</li>
+<li>For $i = 1, &hellip;, n$, let $\mathbf{y}_i$ be the vector corresponding to teh $i^{th}$ row of E</li>
+<li>Cluster points $\{ \mathbf{y}_1, &hellip;, \mathbf{y}_n \}$ using the k-means algorithm into clusters $C_1, &hellip;, C_k$.</li>
+</ol>
+<p>(Missing application of Spectral Clustering as graph partioning)</p>
+<h2 id="dft-dct-convolution">DFT, DCT, Convolution</h2>
+<h3 id="dft">DFT</h3>
+<p>FFT is an $O(n \log n)$ DFT conversion and the IFFT can compute the IDFT in the same runtime.
+The benefit of finding the DFT or IDFT of something is that it can represent data, in another form which can be more easily manipulated or used.</p>
+<p>(Missing a ton of theory)</p>
+<h3 id="convolution">Convolution</h3>
+<p>Let $A = \langle A_0, A_1, &hellip;, A_{n-1} \rangle$ and $B = \langle B_0, B_1, &hellip;, B_{m-1} \rangle$ be two sequences of real or complex numbers.
+We can now form two associated polynomials $P_A(x)$ and $P_B(x)$ with coefficients given by sequences $A$ and $B$.
+Finding the multiple of these polynomials $P_C(x) = P_A(x) \cdot P_B(x)$ can be done in $O(m \times n)$.
+From here, we can get the sequence of it&rsquo;s corresponding coefficients.
+This sequence of length $m + n - 1$ is the linear convolution of sequences $A$ and $B$.
+However, using the FFT algorithm, we can find the linear convolution of these two sequences in time $O((m + n) \log_2(m + n))$.</p>
+<p>An example application is application of Gaussian smoothing to a noisy signal.</p>
+<h2 id="svd">SVD</h2>
+<p>Singular Value Decomposition is a way of representing a very large matrix $A$ as</p>
+<p>$$A = \sum_{i=1}^r = \sigma_i u_i v_i^\intercal = UDV^\intercal$$</p>
+<p>(Insert some more theory)</p>
+<p><strong>To find $\mathbf{v}_1$ and $\mathbf{u}_1$:</strong></p>
+<ol>
+<li>Start with a random vector $\mathbf{x}$ and normalise it so that $| \mathbf{x}| = 1$.</li>
+<li>Compute $\mathbf{z}_1 = A\mathbf{x}$; compute $\mathbf{z}_2 = A^\intercal z_1$; let $\rho = |\mathbf{z}_2|/|\mathbf{x}|$ and $\mathbf{x} = \mathbf{z}_2$</li>
+<li>Repeat (2) until the difference between $\rho$&rsquo;s obtained in two consecutive iterations is smaller than a small threshold $\epsilon$.</li>
+<li>Set $\mathbf{v}_1 = \mathbf{z}_2 / |\mathbf{z}_2|$</li>
+<li>Finally, let $\sigma_1 = |A\mathbf{v}_1|$ and $\mathbf{u}_1 = A \mathbf{v}_1 / \sigma_1$</li>
+</ol>
+<p>This method is called the <strong>Power Method</strong> and it is fast if $A$ and thus also $A^\intercal$ are sparse.</p>
+<p>A good <a href="https://www.youtube.com/watch?v=gXbThCXjZFM">series on SVD</a>.</p>
+<h2 id="power-transmission-in-cellular-networks">Power Transmission in Cellular Networks</h2>
+<p>The signal to interference ratio $SIR_i$ at receiver $R_i$ is given by</p>
+<p>$$SIR_i = \frac{G_{ii}p_i}{\sum_{j: j \neq i}G_{ii}p_j + \eta_i}$$</p>
+<p>where $\eta_i$ is the noise received by the receiver $i$ coming from the environment.
+$SIR_i$ determines the capacity of the channel $C_{ii}$.
+Each pair of transmitter $T_i$ and a receiver $R_i$ needs at least some channel capacity to carray information.
+To achieve this, it needs $SIR_i \geq \gamma_i$.</p>
+<p>We will see later how $\gamma_i$ is determined in practice.
+However, we are interested in:</p>
+<p>$$\text{minimise } \sum_{j=1}^n p_j$$</p>
+<p>$$\text{subject to constraints } \frac{G_{ii} p_i}{\sum_{j: j \neq i}G_{ij} + \eta_i} \geq \gamma_i, \quad 1 \leq i \leq n$$</p>
+<h3 id="matrix-form">Matrix Form</h3>
+<p>Following this, we can simplify our original LP problem into</p>
+<p>$$\text{minimise } \sum_{j=1}^n p_j$$</p>
+<p>$$\text{subject to constraints } p_i - \gamma_i \sum{j:j \neq i} \frac{G_{ij}}{G_{ii}} p_j \geq \frac{\gamma_i \eta_i}{G_{ii}} \\ 1 \leq i, j \leq n, p_j &gt; 0$$</p>
+<p>We can then convert this into a matrix format:</p>
+<p>$$\text{minimise } \mathbf{1}^\intercal \mathbf{p}$$</p>
+<p>$$\text{subject to constraints } (I - DF)\mathbf{p} \geq \mathbf{v}, \mathbf{p} \leq 0$$</p>
+<p>This will have a feasible solution if we are not demanding excessively large $\gamma_i&rsquo;s$.</p>
+<p>This is the case when the spectral radius (largest absolute value of the eigenvalues) of matrix $DF$ $\rho(DF)$, satisfies $\rho(DF) &lt; 1$.</p>
+<p>Proof:</p>
+<ul>
+<li>If $A$ is square matrix and if $\rho(A) &lt; 1$ then $A^m \rightarrow 0$.</li>
+<li>This is easy to see if $A$ has $n$ linearly independent eigenvectors, because in this case $A$ can be represented as
+$$A = Q \Lambda Q^{-1}$$</li>
+<li>Here the $i^{th}$ column of $Q$ is the eigenvector corresponding to eigenvalue $\lambda_i$
+$\Lambda$ is a diagonal matrix with $\lambda_i$ in the $i^{th}$ column and row and zeroes elsewhere.
+In such a case
+$$A^k = Q \Lambda Q^{-1} Q \Lambda Q^{-1} &hellip; Q \Lambda Q^{-1} Q \Lambda Q^{-1} = Q \Lambda^k Q^{-1}$$</li>
+<li>Since $\Lambda^k$ has $\lambda_i^k$ on the diagonal, if $\rho(A) &lt; 1$ then clearly $A^k \rightarrow 0$</li>
+</ul>
+<p>Moreover it is easy to see that</p>
+<p>$$(I - A) \sum_{i=0}^k A^i = \sum_{i=0}^k A^i - \sum_{i=1}^{k+1}A^i = I - A^{k+1}$$</p>
+<p>Thus,</p>
+<p>$$\lim_{k \rightarrow \infty} \left( (I - A) \sum_{i=0}^k A^k \right) \lim_{k \rightarrow \infty}(I - A^{k + 1}),$$</p>
+<p>which implies</p>
+<p>$$(I - A) \sum_{i=0}^\infty A^i = I.$$</p>
+<p>This shows that matrix $I - A$ is invertible and that</p>
+<p>$$(I - A)^{-1} = \sum_{i=0}^\infty A^i$$</p>
+<p>Applying this to matrix $A = DF$, let $\mathbf{p}^*$ be give by</p>
+<p>$$\mathbf{p^*} = (I - DF)^{-1} \mathbf{v} = \sum_{i=0}^\infty (DF)^i \mathbf{v}$$</p>
+<p>Then $(I - DF) \mathbf{p^*} = \mathbf{v}$ and the constraint becomes</p>
+<p>$$(I - DF) \mathbf{p} \geq (I - DF) \mathbf{p^*}$$</p>
+<p>i.e.</p>
+<p>$$(I - DF)(\mathbf{p} - \mathbf{p^*}) \geq 0$$</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        10777 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-03-22 11:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://zesheng630.github.io/posts/for-her/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">for her</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://zesheng630.github.io/posts/unsw-course-review/">
+                    <span class="button__text">UNSW Course Review</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://zesheng630.github.io/">ze sheng</a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>  </span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://zesheng630.github.io/bundle.min.2d3d449fc0ff117f00ac91342a8f76cd5b710411d7a0254dbe75da3234d2f685d6a0c44cff60c414e90b6a149da8e4032c713c25e4e6838e2e3918dc0ad2e81c.js" integrity="sha512-LT1En8D/EX8ArJE0Ko92zVtxBBHXoCVNvnXaMjTS9oXWoMRM/2DEFOkLahSdqOQDLHE8JeTmg44uORjcCtLoHA=="></script>
+
+
+
+    </body>
+</html>
