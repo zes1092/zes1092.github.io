@@ -162,7 +162,7 @@ disableHugoGeneratorInject = false
 
 [languages]
   [languages.en]
-    # subtitle  = "Gary Sun's website"
+    # subtitle  = "Ze Sheng's website"
     weight    = 1
     copyright = ' '
 

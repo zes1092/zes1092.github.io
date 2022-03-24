@@ -6,7 +6,7 @@ tags = []
 date = "2022-03-02"
 categories = []
 series = ["algos"]
-toc = false 
+toc = true
 [ author ]
   name = "Gary Sun"
 +++
