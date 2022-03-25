@@ -11,7 +11,6 @@ aliases = []
 ### [dazed](https://github.com/zes1092/dazed)
 ```hs
 -- in the works
-
 LOADING :: online clothing store
 ```
 
