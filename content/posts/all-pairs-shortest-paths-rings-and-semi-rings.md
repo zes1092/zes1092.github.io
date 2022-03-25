@@ -4,7 +4,7 @@ description = "An application of algebraic structure to a common computer scienc
 type = ["posts","post"]
 tags = []
 date = "2022-03-02"
-categories = []
+categories = ["cs"]
 series = ["algos"]
 toc = true
 [ author ]

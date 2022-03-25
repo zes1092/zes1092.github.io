@@ -4,7 +4,7 @@ description = "~ my baby"
 type = ["posts","post"]
 tags = []
 date = "2022-03-23"
-categories = []
+categories = ["thoughts"]
 series = ["algos"]
 toc = false 
 [ author ]

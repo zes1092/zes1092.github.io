@@ -55,13 +55,13 @@ disableHugoGeneratorInject = false
 
   # Metadata mostly used in document's head
   # 
-  description = " "
+  description = ""
   keywords = ""
   images = [""]
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = ""
+  homeSubtitle = " "
 
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"

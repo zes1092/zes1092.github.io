@@ -3,7 +3,7 @@ title = "UNSW Course Review"
 type = ["posts","post"]
 tags = []
 date = "2022-03-22"
-categories = []
+categories = ["UNSW"]
 series = ["UNSW"]
 toc = true
 [ author ]
