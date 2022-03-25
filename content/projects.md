@@ -9,5 +9,5 @@ aliases = []
 ---
 
 ### [dazed](https://github.com/zes1092/dazed)
-PENDING IN CONSTRUCTION :: online clothing store
+LOADING :: online clothing store
 
