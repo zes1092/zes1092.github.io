@@ -2,7 +2,7 @@
 
 ## Stack
 
-This website uses Hugo (a static site generator), and the theme "hello-friend-ng" (albeit with some of my modifications).
+This website uses Hugo (a static site generator).
 
 ## Hosting
 
