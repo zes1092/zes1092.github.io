@@ -1,5 +1,5 @@
 +++
-title = "blinded reality"
+title = "the stage is yours"
 description = "not much has changed"
 type = ["posts","post"]
 tags = []
