@@ -12,7 +12,6 @@ aliases = []
 ```hs
 -- boys don't cry 
 
-■■■■■■■■■■■□□□ 
 LOADING :: streetwear clothing store
 ```
 
