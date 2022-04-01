@@ -21,6 +21,6 @@ Every girl has a different answer I don't even think they know what they want to
 ### ./afterword
 > ```I'm not an incel. I'm not this toxic person that I display here. Well I used to be. Very obviously put on in the beginning so that I can debunk an argument at the end. The misogyny that I'm trying to debunk is the whole part was trying to come off like a misogynist person. I'm taking a perspective of a socially angst man who doesn't know how to communicate. Knowing so many men who are like this, there's a bit of irony that I'm trying to convey a nuanced perspective to be controversial. If you want to say something truthful yet contentious and say what you really feel, you're going to risk having people canceling you. That is called growth.```
 
----
+
 *~ inspired by she tyler the creator*
 
