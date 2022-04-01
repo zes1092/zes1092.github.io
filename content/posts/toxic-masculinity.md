@@ -21,5 +21,6 @@ Every girl has a different answer I don't even think they know what they want to
 --- 
 > ```I'm not an incel. I'm not this toxic person that I display here. Very obsviousy put on in the beginning so that I can debunk an argument at the end. The misogny that I'm trying to debunk the whole part was trying to come off like a misogynist perosn. I'm taking a perspective of a socially angst man who doesn't know how to communicate. Knwoing people who are like this, there's a bit of irony that I'm trying to take a perspective to say something. If you want to say something controversial and say what you really feel, you're going to risk having people cancelling you. Real success extends materialistic means. I think real sucess and fulfillment for me is making an impact. ```
 
-
+---
+*~ inspired by she tyler the creator*
 
