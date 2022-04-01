@@ -8,12 +8,14 @@ aliases = []
 
 ---
 
-### [dazed](https://github.com/zes1092/dazed)
+### [:: dazed](https://github.com/zes1092/dazed)
 ```hs
 -- boys don't cry 
 
 LOADING :: streetwear clothing store
 ```
+
+---
 
 ### [dazedcat](https://github.com/zes1092/dazedcat)
 ```hs
