@@ -1,5 +1,5 @@
 +++
-title = "final fantasy"
+title = "my final fantasy"
 description = "confession"
 type = ["posts","post"]
 tags = []
