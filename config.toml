@@ -159,6 +159,10 @@ disableHugoGeneratorInject = false
   [[params.social]]
     name = "discord"
     url  = "https://discord.com/users/257035349811920897"
+  
+  [[params.social]]
+    name = "youtube"
+    url  = "https://www.youtube.com/watch?v=XIqVCJWSoeE"
 
 [languages]
   [languages.en]
