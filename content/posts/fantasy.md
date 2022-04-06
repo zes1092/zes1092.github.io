@@ -12,3 +12,5 @@ toc = false
 +++
 
 > im too blind to see. i wonder why. 
+
+[perfect](https://www.youtube.com/watch?v=XIqVCJWSoeE)

@@ -161,8 +161,8 @@ disableHugoGeneratorInject = false
     url  = "https://discord.com/users/257035349811920897"
   
   [[params.social]]
-    name = "youtube"
-    url  = "https://www.youtube.com/watch?v=XIqVCJWSoeE"
+    name = "spotify"
+    url  = "https://open.spotify.com/user/315tkir3bb5uaizsa5wfskz6n5ma"
 
 [languages]
   [languages.en]
