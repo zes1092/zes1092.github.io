@@ -10,6 +10,5 @@ aliases = []
 
 ### [:: dazed](https://github.com/zes1092/dazed)
 ```hs
-
 loading :: 🕹 Matthew Williams inspired online clothing store designed with Webflow and Figma
 ```
