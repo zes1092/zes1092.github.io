@@ -7,11 +7,11 @@ aliases = []
 +++
 
 
-Hi, I'm Ze Sheng and I'm studying Computer Science and Mathematics at the University of New South Wales. 
+Hi, I'm Ze Sheng and I'm studying Computer Science at the University of New South Wales. 
 
 I like algorithms, backend development, some theoretical computer science. Some languages I like to program in are Python and Javascript. 
 
-In my spare time, I like running, cats, butterflies, art and music. 
+In my spare time, I like cats, fashion, art and music. 
 
 ```hs
 -- my handcrafted website
