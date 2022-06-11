@@ -1,6 +1,6 @@
 +++
 title = "linger"
-description = ""
+description = "vitality is dead. press to revive."
 type = ["posts","post"]
 tags = []
 date = "2022-05-16"

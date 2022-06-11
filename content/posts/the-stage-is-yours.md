@@ -1,6 +1,6 @@
 +++
 title = "the stage is yours"
-description = "not much has changed"
+description = "love the rage"
 type = ["posts","post"]
 tags = []
 date = "2022-03-26"
