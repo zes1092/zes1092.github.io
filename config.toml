@@ -37,7 +37,7 @@ disableHugoGeneratorInject = false
   posts = "/posts/:title/"
 
 [author]
-  name = "ze sheng"
+  name = "ze sheng" 
 
 [blackfriday]
   hrefTargetBlank = true
@@ -117,7 +117,7 @@ disableHugoGeneratorInject = false
     logoText     = "dazed"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
-    logoCursorDisabled = false
+    logoCursorDisabled = true
     # Set to a valid CSS color to change the cursor in the logo.
     # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
