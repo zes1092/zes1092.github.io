@@ -7,9 +7,7 @@ aliases = []
 +++
 
 
-Hi, I'm Ze Sheng and I create experiences. 
-
-I like fashion, art and music. 
+I create experiences. 
 
 ```hs
 -- my handcrafted website
