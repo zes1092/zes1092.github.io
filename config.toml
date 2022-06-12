@@ -156,13 +156,6 @@ disableHugoGeneratorInject = false
     name = "linkedin"
     url  = "https://www.linkedin.com/in/ze-sheng-4523bb227/"
 
-  [[params.social]]
-    name = "discord"
-    url  = "https://discord.com/users/257035349811920897"
-  
-  [[params.social]]
-    name = "spotify"
-    url  = "https://open.spotify.com/user/315tkir3bb5uaizsa5wfskz6n5ma"
 
 [languages]
   [languages.en]
