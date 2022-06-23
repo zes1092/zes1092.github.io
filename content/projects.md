@@ -8,9 +8,9 @@ aliases = []
 
 ---
 
-### [dazed.io](https://github.com/zes1092/dazed.io/)
+### [archetypes.io](https://github.com/zes1092/archetypes.io/)
 ```hs
---- HUMAN_ONE is dead. press to revive.
+--- launch archetypes = Vy { :: Yes, :: No }
 
 loading :: Matthew Williams inspired online clothing store designed with Webflow and Figma
 ```
