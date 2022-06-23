@@ -6,8 +6,6 @@ aliases = []
   name = "ze sheng"
 +++
 
----
-
 ### [archetypes.io](https://github.com/zes1092/archetypes.io/)
 ```hs
 --- launch archetypes = Vy { :: Yes, :: No }
