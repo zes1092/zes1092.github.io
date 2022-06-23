@@ -12,5 +12,5 @@ aliases = []
 ```hs
 --- launch archetypes = Vy { :: Yes, :: No }
 
-loading :: Matthew Williams inspired online clothing store designed with Webflow and Figma
+IO :: Matthew Williams inspired online clothing store designed with Webflow and Figma
 ```
