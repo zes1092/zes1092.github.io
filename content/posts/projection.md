@@ -1,6 +1,6 @@
 +++
-title = "insecure bitch"
-description = "suck my dick"
+title = "must be projection"
+description = ""
 type = ["posts","post"]
 tags = []
 date = "2022-06-23"
