@@ -1,6 +1,6 @@
 +++
-title = "fuckery"
-description = "eye porn"
+title = "please focus"
+description = "i need more"
 type = ["posts","post"]
 tags = []
 date = "2022-06-10"

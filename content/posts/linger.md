@@ -1,5 +1,5 @@
 +++
-title = "linger"
+title = "irritable critique"
 description = "vitality is dead. press to revive."
 type = ["posts","post"]
 tags = []
