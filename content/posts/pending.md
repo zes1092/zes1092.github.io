@@ -11,4 +11,4 @@ toc = false
   name = "Ze Sheng"
 +++
 
-> What is the difference between love and obsession? They're almost indistinguishable but love is healthy & love is reciprocal. Obsession is not. It changes you. It hooks you in like an addiction.
+> What is the difference between love and obsession? They're almost indistinguishable but love is healthy and love is reciprocal. Obsession is not. It changes you. It hooks you in like an addiction.
