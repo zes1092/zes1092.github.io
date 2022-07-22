@@ -6,8 +6,7 @@ aliases = []
   name = "ze sheng"
 +++
 
-
-I create experiences. 
+my corner of the internet. 
 
 ```hs
 -- my handcrafted website

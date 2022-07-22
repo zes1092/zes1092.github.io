@@ -1,6 +1,6 @@
 +++
-title = "take it or leave it"
-description = "no more. i think ive had enough"
+title = "take or leave"
+description = "grant my wish"
 type = ["posts","post"]
 tags = []
 date = "2022-07-22"
