@@ -6,9 +6,9 @@ aliases = []
   name = "ze sheng"
 +++
 
-### [archetypes.io](https://github.com/zes1092/archetypes.io/)
+### [breaux.io](https://github.com/zes1092/breaux.io/)
 ```hs
---- launch archetypes = Vy { :: Yes, :: No }
+-- launch archetypes = Vy { :: Yes, :: No }
 
 IO :: Matthew Williams inspired online clothing store designed with Webflow and Figma
 ```
