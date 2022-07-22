@@ -8,7 +8,7 @@ aliases = []
 
 ### [breaux.io](https://github.com/zes1092/breaux.io/)
 ```hs
--- launch archetypes = Vy { :: Yes, :: No }
+-- launch breaux = Vy { :: Yes, :: No }
 
 IO :: Matthew Williams inspired online clothing store designed with Webflow and Figma
 ```
