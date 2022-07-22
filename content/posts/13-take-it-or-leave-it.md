@@ -1,6 +1,6 @@
 +++
-title = "a confirmation"
-description = "from her eyes only"
+title = "take it or leave it"
+description = "no more. i think ive had enough"
 type = ["posts","post"]
 tags = []
 date = "2022-07-22"
