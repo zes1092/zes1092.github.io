@@ -1,5 +1,5 @@
 +++
-title = "rejected confession"
+title = "a confirmation"
 description = "from her eyes only"
 type = ["posts","post"]
 tags = []
